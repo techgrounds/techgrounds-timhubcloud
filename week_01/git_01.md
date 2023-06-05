@@ -15,21 +15,21 @@ Github is een platform voor ontwikkeleraars om samen te werken aan projecten via
 ## Opdrachten
 
 ### Opdracht 1
-[x] Maak een GitHub account als je er nog geen hebt
-[x] Maak een repository op je GitHub account voor je portfolio
-[x] Geef permissies aan je teamgenoten om de repository te gebruiken
-[x] Push je code naar je repository
-[x] Pull / Clone een repository van je peer.
+- [x] Maak een GitHub account als je er nog geen hebt
+- [x] Maak een repository op je GitHub account voor je portfolio
+- [x] Geef permissies aan je teamgenoten om de repository te gebruiken
+- [x] Push je code naar je repository
+- [x] Pull / Clone een repository van je peer.
 
 ### Opdracht 2
-[x] Maak een nieuwe repository aan voor je portfolio
-[x] Push je notities naar de repository
-[x] Deel deze repository met je Learning Coach
+- [x] Maak een nieuwe repository aan voor je portfolio
+- [x] Push je notities naar de repository
+- [x] Deel deze repository met je Learning Coach
 
 ### Gebruikte bronnen
-[An introduction to Git: what it is, and how to use it](https://www.freecodecamp.org/news/what-is-git-and-how-to-use-it-c341b049ae61/)
-[GIT Push and Pull Tutorial](https://www.datacamp.com/tutorial/git-push-pull)
-[Git Bash Commands](https://dev.classmethod.jp/articles/git-bash-commands/)
+- [An introduction to Git: what it is, and how to use it](https://www.freecodecamp.org/news/what-is-git-and-how-to-use-it-c341b049ae61/)
+- [GIT Push and Pull Tutorial](https://www.datacamp.com/tutorial/git-push-pull)
+- [Git Bash Commands](https://dev.classmethod.jp/articles/git-bash-commands/)
 
 ### Ervaren problemen
 Korte tijd had een teamgenoot problemen met het gebruik van Git. Na samen troubleshooting te hebben gedaan is het hem zelf gelukt de problemen op te lossen door Git opnieuw te installeren.
