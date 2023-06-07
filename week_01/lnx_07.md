@@ -34,19 +34,23 @@ Scripts directory aangemaakt en toegevoegd aan de `$PATH` variable:
 
 Eerste bash script geschreven en getest. Elke keer dat **append.sh** wordt uigevoerd komt er een regel bij in **append.txt**:
 
-``#!/usr/bin/bash
-echo "Another line" >> append.txt``
+```
+#!/usr/bin/bash
+echo "Another line" >> append.txt
+```
 
 ![append](../00_includes/week_01_images/screen22.png)
 
 Bash script voor het installeren, enablen en starten van apache:
 
-``#!/usr/bin/bash
+```
+#!/usr/bin/bash
 sudo apt update
 sudo apt install apache2
 sudo systemctl enable apache2
 sudo systemctl start apache2
-sudo systemctl status apache2``
+sudo systemctl status apache2
+```
 
 Screenshot hieronder laat de installatie niet zien, want die was al eerder gelukt:
 
@@ -54,8 +58,10 @@ Screenshot hieronder laat de installatie niet zien, want die was al eerder geluk
 
 Ten slotte een script die het `shuf` command gebruikt om een willekeurig getal te genereren en vervolgens toe te voegen aan random.txt:
 
-``#!/usr/bin/bash
+```
+#!/usr/bin/bash
 random=$(shuf -i 2-9 -n1)
-echo $random >> random.txt``
+echo $random >> random.txt
+```
 
 ![random](../00_includes/week_01_images/screen25.png)
