@@ -34,14 +34,14 @@ Geen problemen ervaren.
 
 ### Resultaat
 
-Permissions.txt aangemaakt met `cat` en vervolgens een lijst met permissions geprint via **ls -al**:
+Permissions.txt aangemaakt met `cat` en vervolgens een lijst met permissions geprint via `ls -al`:
 
 ![cat, ls -al](../00_includes/week_01_images/screen15.png)
 
-Permissions aangepast met **chmod**:
+Permissions aangepast met `chmod`:
 
 ![chmod](../00_includes/week_01_images/screen16.png)
 
-Owner en group van permissions.txt aangepast met **chown** en **chgrp**:
+Owner en group van permissions.txt aangepast met `chown` en `chgrp`:
 
 ![chown, chgrp](../00_includes/week_01_images/screen17.png)
