@@ -20,7 +20,7 @@ In linux is een process een individueele instance van een programma dat op dat m
 
 ### Gebruikte bronnen
 - [Working with Processes and Services in Linux: A Beginner’s Guide](https://tecadmin.net/working-with-processes-and-services-in-linux-a-beginners-guide/)
-- [https://www.makeuseof.com/linux-process-management/](https://www.makeuseof.com/linux-process-management/)
+- [Linux Process Management: The Ultimate Guide](https://www.makeuseof.com/linux-process-management/)
 - [What is a daemon?](https://www.techtarget.com/whatis/definition/daemon)
 - [telnetd Daemon](https://www.ibm.com/docs/en/aix/7.2?topic=t-telnetd-daemon)
 - [inetd](https://en.wikipedia.org/wiki/Inetd)
