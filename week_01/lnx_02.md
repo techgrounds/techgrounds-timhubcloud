@@ -1,14 +1,14 @@
 # Files and Directories
-Bestanden worden in linux georganiseerd in een hierarchische structuur die we het filesystem noemen. Directories zijn de folders waar deze bestanden in worden geplaatst.
+Bestanden worden in Linux georganiseerd in een hiërarchische structuur die we het filesystem noemen. Directories zijn de folders waar deze bestanden in worden geplaatst.
 
 Om je te verplaatsen in dit filesystem kun je gebruik maken van relative en absolute paths. Een absolute path is het complete path vanaf de root directory. Een relative path is het path relatief gezien ten opzichte van he huidige directory.
 
 ## Key-terms
-- **Filesystem**: hierarchische structuur van bestanden en folders in linux.
+- **Filesystem**: hiërarchische structuur van bestanden en folders in linux.
 - **Directories**: folders voor bestanden.
 - **Absolute path**: complete path vanaf de root directory.
 - **Relative path**: path relatief gezien ten opzichte van het huidige directory.
-- **Home directory (~)**: directory van de gebruiker en de plek waar je begint als je inlogd.
+- **Home directory (~)**: directory van de gebruiker en de plek waar je begint als je inlogt.
 - **Hidden file (.)**: verborgen bestanden.
 
 ## Opdrachten
