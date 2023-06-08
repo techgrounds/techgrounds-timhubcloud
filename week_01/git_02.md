@@ -32,7 +32,9 @@ Er ontstonden problemen met afbeeldingen die niet wilden laden in de .md file om
 
 Voor efficiëntie heb ik de voor deze opdracht benodigde elementen meteen toegepast op de voorgaande opdracht. Deze heb ik geadd:
 
-`$ git add week_01/git_01.md`
+```
+$ git add week_01/git_01.md
+```
 
 En gepushed naar mijn repository op de techgrounds classroom:
 

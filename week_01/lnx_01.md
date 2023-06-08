@@ -3,7 +3,7 @@ Linux is een gratis open source operating system gebaseerd op Unix. Linux komt i
 
 ## Key-terms
 - **SSH**: Secure Shell; zorgt voor een beveiligde verbinding met remote devices of servers.
-- **CLI**: Command Line Interface; een text-based gebruikersinterface waarmee je commandos geeft aan een computer.
+- **CLI**: Command Line Interface; een text-based gebruikersinterface waarmee je commands geeft aan een computer.
 - **GUI**: Graphical User Interface; een gebruikersinterface bestaande uit interactive visuele componenten.
 - **VM**: een computer resource waar software in plaats van een fysieke computer wordt gebruikt.
 - **Key File**: access credentials voor het SSH netwerk protocol.
