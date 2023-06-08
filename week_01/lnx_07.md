@@ -1,5 +1,5 @@
 # Bash scripting
-Shell scripting is een belangrijk onderdeel van process automatisering in Linux. Het is een krachtig gereedschap voor het automatiseren van o.a. herhaaldelijke taken. Bash (Bourne Again SHell) is the standaard shell van Linux.
+Shell scripting is een belangrijk onderdeel van process automatisering in Linux. Het is een krachtig gereedschap voor het automatiseren van o.a. herhaaldelijke taken. Bash (Bourne Again SHell) is de standaard shell van Linux.
 
 ## Key-terms
 - **Shell**: een Command Line Interpreter waarmee commands kunnen worden uitgevoerd.
@@ -32,7 +32,7 @@ Scripts directory aangemaakt en toegevoegd aan de `$PATH` variable:
 
 ![path](../00_includes/week_01_images/screen21.png)
 
-Eerste bash script geschreven en getest. Elke keer dat **append.sh** wordt uigevoerd komt er een regel bij in **append.txt**:
+Eerste bash script geschreven en getest. Elke keer dat **append.sh** wordt uitgevoerd komt er een regel bij in **append.txt**:
 
 ```
 #!/usr/bin/bash

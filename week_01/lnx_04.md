@@ -1,5 +1,5 @@
 # Users and groups
-User management in linux gaat over het maken, wijzigen en beheren van user accounts en de toegang die deze accounts in het systeem hebben. De gebruikersnamen, groepen en wachtwoorden worden in Linux respectievelijk opgeslagen in /etc/passwd, /etc/group en /ets/shadow.
+User management in Linux gaat over het maken, wijzigen en beheren van user accounts en de toegang die deze accounts in het systeem hebben. De gebruikersnamen, groepen en wachtwoorden worden in Linux respectievelijk opgeslagen in /etc/passwd, /etc/group en /etc/shadow.
 
 Voor het bekijken en wijzigen van user accounts is in sommige gevallen root access nodig. Het bestand waar wachtwoorden worden opgeslagen, /etc/shadow, is bijvoorbeeld alleen toegankelijk voor de root user, om te voorkomen dat alle gebruikers van het systeem deze wachtwoorden kunnen inzien.
 
@@ -28,7 +28,7 @@ Geen problemen ervaren.
 
 ### Resultaat
 
-Gebruiker "harry" toegevoegd, in de groupen admin en sudo geplaatst met een wachtwoord:
+Gebruiker "harry" toegevoegd, in de groepen admin en sudo geplaatst met een wachtwoord:
 
 ![useradd](../00_includes/week_01_images/screen13.png)
 

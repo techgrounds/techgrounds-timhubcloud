@@ -1,5 +1,5 @@
 # Cron jobs
-Crontab (afkorting van Cron Table) is een job scheduler in Unix die op basis van tijd commands en scripts uitvoert. Dit is handig voor het uivoeren van o.a. repetatieve taken en periodiek onderhoud. Voorbeelden hiervan zijn: het maken van backups, software updates etc.
+Crontab (afkorting van Cron Table) is een job scheduler in Unix die op basis van tijd commands en scripts uitvoert. Dit is handig voor het uitvoeren van o.a. repetitieve taken en periodiek onderhoud. Voorbeelden hiervan zijn: het maken van backups, software updates etc.
 
 ## Key-terms
 - **Cron**: naam van het system in dat periodiek taken uitvoert.
@@ -20,7 +20,7 @@ Crontab (afkorting van Cron Table) is een job scheduler in Unix die op basis van
 - [Crontab Guru](https://crontab.guru)
 
 ### Ervaren problemen
-Script geschreven voor het printen van tijd en datum naar datetime.txt en vervolgens toegevoegd aan crontab. De tijd werd in datetime.txt echter niet geupdatet. Na wat troubleshouting erachter gekomen dat ik was vergeten execute permissions te geven aan het .sh bestand. Snel opgelost.
+Script geschreven voor het printen van tijd en datum naar datetime.txt en vervolgens toegevoegd aan crontab. De tijd werd in datetime.txt echter niet geüpdatet. Na wat troubleshouting erachter gekomen dat ik was vergeten execute permissions te geven aan het .sh bestand. Snel opgelost.
 
 ### Resultaat
 
@@ -42,6 +42,6 @@ Script voor het schrijven van diskspace naar /var/logs/diskspace.log:
 df > /var/logs/diskspace.log
 ```
 
-En toegevoegd aan crontab; wordt elke sunday om 00:00 uitevoerd:
+En toegevoegd aan crontab; wordt elke sunday om 00:00 uitgevoerd:
 
 ![crontab, diskspace](../00_includes/week_01_images/screen27.png)

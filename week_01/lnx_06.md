@@ -1,5 +1,5 @@
 # Processen
-In linux is een process een individueele instance van een programma dat op dat moment wordt uitgevoerd. Elk process krijgt van het operating system een unieke Process ID (PID) toegewezen. Via de CLI kun je in linux gemakkelijk deze processen beheren.
+In Linux is een process een individuele instance van een programma dat op dat moment wordt uitgevoerd. Elk process krijgt van het operating system een unieke Process ID (PID) toegewezen. Via de CLI kun je in Linux gemakkelijk deze processen beheren.
 
 ## Key-terms
 - **Process**: een running command instance.
@@ -32,7 +32,7 @@ Enige tijd moeten zoeken naar de locatie van de telnet daemon. Ik kwam er via do
 
 ### Resultaat
 
-**telnetd** geinstalleerd:
+**telnetd** geïnstalleerd:
 
 ![telnetd](../00_includes/week_01_images/screen18.png)
 
