@@ -17,6 +17,9 @@ Shell scripting is een belangrijk onderdeel van process automatisering in Linux.
 ### Opdracht 2
 - [x] Create a script that generates a random number between 1 and 10, stores it in a variable, and then appends the number to a text file.
 
+### Opdracht 3
+- [x] Create a script that generates a random number between 1 and 10, stores it in a variable, and then appends the number to a text file only if the number is bigger than 5. If the number is 5 or smaller, it should append a line of text to that same text file instead.
+
 ### Gebruikte bronnen
 - [How to Add a Directory to PATH in Linux](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/)
 - [Bash Scripting Tutorial – Linux Shell Script and Command Line for Beginners](https://www.freecodecamp.org/news/bash-scripting-tutorial-linux-shell-script-and-command-line-for-beginners/#how-to-get-started-with-bash-scripting)
@@ -24,7 +27,7 @@ Shell scripting is een belangrijk onderdeel van process automatisering in Linux.
 - [Generate Random Number in Bash](https://www.delftstack.com/howto/linux/random-number-generation-in-bash/)
 
 ### Ervaren problemen
-Geen problemen ervaren.
+Onverwacht resultaat bij opdracht 3: random2.sh schreef steeds alle getallen naar random2.txt in plaats van alleen de getallen groter dan 5. Ik kwam er achter dat dit kwam door het gebruik van single brackets in plaats van double brackets, waardoor bash de conditional > aan zag voor file redirection operator. Bron: [Differences Between Single and Double Brackets in Bash](https://www.baeldung.com/linux/bash-single-vs-double-brackets)
 
 ### Resultaat
 
@@ -56,7 +59,7 @@ Screenshot hieronder laat de installatie niet zien, want die was al eerder geluk
 
 ![apache2](../00_includes/week_01_images/screen24.png)
 
-Ten slotte een script die het `shuf` command gebruikt om een willekeurig getal te genereren en vervolgens toe te voegen aan random.txt:
+Een script die het `shuf` command gebruikt om een willekeurig getal te genereren en vervolgens toe te voegen aan random.txt:
 
 ```
 #!/usr/bin/bash
@@ -65,3 +68,18 @@ echo $random >> random.txt
 ```
 
 ![random](../00_includes/week_01_images/screen25.png)
+
+Ten slotte een script die het `shuf` command gebruikt om een willekeurig getal te genereren en met een if else statement kijkt of het getal groter is dan 5:
+
+```
+#!/usr/bin/bash
+random=$(shuf -i 2-9 -n1)
+if [[ $random > 5 ]]
+then
+        echo $random >> random2.txt
+else
+        echo "Kleiner dan 6" >> random2.txt
+fi
+```
+
+![random](../00_includes/week_01_images/screen28.png)
