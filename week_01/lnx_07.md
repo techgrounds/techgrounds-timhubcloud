@@ -25,6 +25,7 @@ Shell scripting is een belangrijk onderdeel van process automatisering in Linux.
 - [Bash Scripting Tutorial – Linux Shell Script and Command Line for Beginners](https://www.freecodecamp.org/news/bash-scripting-tutorial-linux-shell-script-and-command-line-for-beginners/#how-to-get-started-with-bash-scripting)
 - [Package Management Essentials: apt, yum, dnf, pkg](https://www.digitalocean.com/community/tutorials/package-management-basics-apt-yum-dnf-pkg)
 - [Generate Random Number in Bash](https://www.delftstack.com/howto/linux/random-number-generation-in-bash/)
+- [Bash Scripting: Conditionals](https://linuxconfig.org/bash-scripting-conditionals)
 
 ### Ervaren problemen
 Onverwacht resultaat bij opdracht 3: random2.sh schreef steeds alle getallen naar random2.txt in plaats van alleen de getallen groter dan 5. Ik kwam er achter dat dit kwam door het gebruik van single brackets in plaats van double brackets, waardoor bash de conditional > aan zag voor file redirection operator. Bron: [Differences Between Single and Double Brackets in Bash](https://www.baeldung.com/linux/bash-single-vs-double-brackets)
