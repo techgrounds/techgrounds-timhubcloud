@@ -1,5 +1,3 @@
---------02---------
-
 # Network Devices
 Network devices are components that facilitate communications between different devices on the network. These can be physical or virtual. The size of the network indicates how many of these devices are required for a well functioning network. A home network for example may only need 2 network devices whilst an enterprise network may require hundreds.
 
@@ -26,7 +24,7 @@ Network devices operate in different layers of the OSI model. Some devices can o
 ### Assignment 2
 - [x] De meeste routers hebben een overzicht van alle verbonden apparaten, vind deze lijst. Welke andere informatie heeft de router over aangesloten apparatuur?
 
-### Assignment 2
+### Assignment 3
 - [x] Waar staat je DHCP server op jouw netwerk? Wat zijn de configuraties hiervan?
 
 ### Sources
