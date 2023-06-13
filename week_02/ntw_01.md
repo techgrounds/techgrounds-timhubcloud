@@ -2,13 +2,13 @@
 The OSI Model is a logical and conceptual model that defines network communication used by systems open to interconnection and communication with other systems. TCP/IP helps you to determine how a specific computer should be connected to the internet and how you can transmit data between them.
 
 ## Key-terms
-- ** protocol: a set of rules that determine how data is transmitted between different devices.
-- ** protocol stack (network stack): a group of concurrently running protocols that are part of the same protocol family or suite.
-- ** Encapsulation: the attaching of new information as it passes down the layers in the source device.
-- ** De-encapsulation: the removal of the encapsulated data as it moves up the layers in the destination device.
-- ** Adjacent-layer interaction: interaction between layers adjacent to each other, e.g.: encapsulation and de-encapsulation
-- ** Same-layer interaction: interaction between the two systems on the same layer. This is used for things like: identifying communication partners and synchronizing communications.
-- ** Protocol Data Units (PDU): these are the data units created by the level 2 to level 7 layers of the OSI stack. These are: data, segment, packet and frame.
+- **Protocol**: a set of rules that determine how data is transmitted between different devices.
+- **Protocol stack (network stack)**: a group of concurrently running protocols that are part of the same protocol family or suite.
+- **Encapsulation**: the attaching of new information as it passes down the layers in the source device.
+- **De-encapsulation**: the removal of the encapsulated data as it moves up the layers in the destination device.
+- **Adjacent-layer interaction**: interaction between layers adjacent to each other, e.g.: encapsulation and de-encapsulation
+- **Same-layer interaction**: interaction between the two systems on the same layer. This is used for things like: identifying communication partners and synchronizing communications.
+- **Protocol Data Units (PDU)**: these are the data units created by the level 2 to level 7 layers of the OSI stack. These are: data, segment, packet and frame.
 
 ## Assignments
 
