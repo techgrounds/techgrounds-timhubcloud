@@ -3,13 +3,13 @@ Network devices are components that facilitate communications between different 
 
 Network devices operate in different layers of the OSI model. Some devices can operate in multiple different layers:
 
-7. Application: Gateway
-6. Presentation: Gateway
-5. Session: Gateway
-4. Transport: Gateway, Firewall
-3. Network: Gateway, Router
-2. Data-link: Access Point, Bridge, Gateway, Modem, Switch
 1. Physical: Gateway, Hub, Modem, Repeater, Cables
+2. Data-link: Access Point, Bridge, Gateway, Modem, Switch
+3. Network: Gateway, Router
+4. Transport: Gateway, Firewall
+5. Session: Gateway
+6. Presentation: Gateway
+7. Application: Gateway
 
 ## Key-terms
 - **Network**:  a collection of interconnected devices or nodes that communicate and share resources with each other.

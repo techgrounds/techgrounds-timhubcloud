@@ -1,5 +1,3 @@
---------03---------
-
 # Protocols
 A network protocol governs the communication between network devices based on a set of rules. By having a standardized set of communication rules devices with different internal processes, structures and design are able to communicate with each other.
 
@@ -75,13 +73,13 @@ No problems.
 
 ## Assignment 1
 
-7. Application Layer: HTTP, SMTP, DHCP, FTP, Telnet, SNMP, SMPP
-6. Presentation Layer: XDR, TLS, SSL, MIME
-5. Session layer: PPTP, SAP, L2TP, NetBIOS
-4. Transport Layer: Transmission Control Protocol (TCP), UDP, SPX, DCCP, SCTP
-3. Network Layer: Internet Protocol (IPv4), Internet Protocol (IPv6), IPX, AppleTalk, ICMP, IPSec, IGMP
-2. Data Link Layer: ARP, CSLIP, HDLC, IEEE.802.3, PPP, X-25, SLIP, ATM, SDLS, PLIP
 1. Physical Layer: Bluetooth, PON, OTN, DSL, IEEE.802.11, IEEE.802.3, L431, TIA 449
+2. Data Link Layer: ARP, CSLIP, HDLC, IEEE.802.3, PPP, X-25, SLIP, ATM, SDLS, PLIP
+3. Network Layer: Internet Protocol (IPv4), Internet Protocol (IPv6), IPX, AppleTalk, ICMP, IPSec, IGMP
+4. Transport Layer: Transmission Control Protocol (TCP), UDP, SPX, DCCP, SCTP
+5. Session layer: PPTP, SAP, L2TP, NetBIOS
+6. Presentation Layer: XDR, TLS, SSL, MIME
+7. Application Layer: HTTP, SMTP, DHCP, FTP, Telnet, SNMP, SMPP
 
 ## Assignment 2
 
