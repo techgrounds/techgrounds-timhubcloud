@@ -5,7 +5,7 @@ In binary numbers are represented with bits (binary digit), represented by eithe
 
 In order to convert binary to decimal you can use this formula:
 
-D = x~n~ * b<sup>n</sup> + x~n-1~ * b^n-1^ + ...
+D = x<sub>n</sub> * b<sup>n</sup> + x<sub>n-1</sub> * b<sup>n-1</sup> + ...
 
 D = Decimal
 
@@ -13,22 +13,20 @@ x = digit value
 
 b = base value
 
-Example: 1000 = 1 x 2^3^ + 0 x 2^2^ + 0 x 2^1^ + 0 x 2^0^
+Example: 1000 = 1 x 2<sup>3</sup> + 0 x 2<sup>2</sup> + 0 x 2<sup>1</sup> + 0 x 2<sup>0</sup>
 
 This table shows 8-bit (byte) binary numbers and their corresponding decimal value:
 
-|---|---|---|
 | Bit position | Decimal Value | Binary to decimal calculation|
 |---|---|---|
-|1|1|2^0^|
-|2|2|2^1^|
-|3|4|2^2^|
-|4|8|2^3^|
-|5|16|2^4^|
-|6|32|2^5^|
-|7|64|2^6^|
-|8|128|2^7^|
-|---|---|---|
+|1|1|2<sup>0</sup>|
+|2|2|2<sup>1</sup>|
+|3|4|2<sup>2</sup>|
+|4|8|2<sup>3</sup>|
+|5|16|2<sup>4</sup>|
+|6|32|2<sup>5</sup>|
+|7|64|2<sup>6</sup>|
+|8|128|2<sup>7</sup>|
 
 To convert decimal to binary, you can use the remainder method:
 
@@ -68,7 +66,6 @@ No problems.
 
 ## Assignment 1
 
-|---|---|---|
 | Decimal | Calculation | Binary |
 |---|---|---|
 |16|16/2=8 R0, 8/2=4 R0, 4/2=2 R0, 2/2=1 R0, 1/2=0 R1|10000|
@@ -85,4 +82,3 @@ No problems.
 ## Assignment 3
 
 
-![Wireshark](../00_includes/week_02_images/screen6.png)
