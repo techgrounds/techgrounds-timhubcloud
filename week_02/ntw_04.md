@@ -5,7 +5,7 @@ In binary numbers are represented with bits (binary digit), represented by eithe
 
 In order to convert binary to decimal you can use this formula:
 
-D = x~n~ * b^n^ + x~n-1~ * b^n-1^ + ...
+D = x~n~ * b<sup>n</sup> + x~n-1~ * b^n-1^ + ...
 
 D = Decimal
 
