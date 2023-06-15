@@ -61,7 +61,7 @@ No problems.
 
 ## Assignment 1
 
-There are several ways you can find out what you public IP address is. For this assignment I used an online IP address lookup tool for both my laptop and my tablet. (censored for privacy :-)
+There are several ways you can find out what your public IP address is. For this assignment I used an online IP address lookup tool for both my laptop and my tablet. (censored for privacy :-)
 
 Laptop:
 
