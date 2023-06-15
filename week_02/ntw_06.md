@@ -61,6 +61,8 @@ Here is some additional information per subnet from the subnet calculator:
 
 private subnet 1: 15 hosts
 
+| | Value|
+|---|---|
 |IP Address|192.168.1.0|
 |Network Address|192.168.1.0|
 |Usable Host IP Range|192.168.1.1 - 192.168.1.30|
@@ -75,6 +77,8 @@ private subnet 1: 15 hosts
 
 private subnet 2: 30 hosts
 
+| | Value|
+|---|---|
 |IP Address|192.168.1.32|
 |Network Address|192.168.1.32|
 |Usable Host IP Range|192.168.1.33 - 192.168.1.62|
@@ -89,6 +93,8 @@ private subnet 2: 30 hosts
 
 public subnet 3: 5 hosts + NAT gateway
 
+| | Value|
+|---|---|
 |IP Address|192.168.1.64|
 |Network Address|192.168.1.64|
 |Usable Host IP Range|192.168.1.65 - 192.168.1.70|
