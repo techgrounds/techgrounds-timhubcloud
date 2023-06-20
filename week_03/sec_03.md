@@ -127,7 +127,7 @@ Multi Factor Authentication uses two or more of the above methods to identify a 
 
 ## Assignment 3
 
-###Principle of Least Privilege (PoLP)
+### Principle of Least Privilege (PoLP)
 
 The concept of Principle of Least Privilege involves only giving out access to a resource to users or programs that really need to to perform their functions or duties. The idea here is that giving access to a resource that isn't need only decreases security and provides no real benefit.
 

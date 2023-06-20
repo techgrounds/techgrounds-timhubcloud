@@ -42,7 +42,7 @@ Firewalls can be either hardware or software:
 ### Assignment 3
 - [x] Stel de firewall zo in dat je webverkeer blokkeert, maar wel ssh-verkeer toelaat.
 
-### Assignment 3
+### Assignment 4
 - [x] Controleer of de firewall zijn werk doet.
 
 ### Sources
