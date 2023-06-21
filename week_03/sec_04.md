@@ -143,4 +143,4 @@ There are several strategies that can be used to securely send a key for symmetr
 - **Key Encapsulation Mechanism**: a key encapsulation mechanism creates a special envelope by using public and private keys of asymmetric cryptography.
 - **Out-of-Band Procedures**: uses a secondary communication channel to submit the key to the other side.
 
-Of these three methods the first two could be used to satisfy the conditions of the "You are not allowed to use any private messages or other communication channels besides the public Slack channel." part of the assignment
+Of these three methods the first two could be used to satisfy the conditions of the "You are not allowed to use any private messages or other communication channels besides the public Slack channel." part of the assignment.
