@@ -26,7 +26,7 @@ Protecting a network from malicious intruders is paramount for any network admin
 - **Intrusion Prevention System (IPS)**
 	IPS's main role goes a step further and also includes by not only detecting but also preventing attacks. This makes IPS both a diagnostic tool as well as an incident response tool.
 
-There are various ways an IPS can operate:
+	There are various ways an IPS can operate:
 
 	- **Network-based IPS (NIPS)**: monitors traffic; places at strategic points within a network; to thwart an attack it can perform several actions, such as: dropping malicious packets, resetting connections, or reconfiguring network devices.
 
