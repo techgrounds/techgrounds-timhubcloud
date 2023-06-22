@@ -138,14 +138,14 @@ First we add user rainbow to our VM using `sudo useradd rainbow`, followed by a 
 rainbow:$6$v0t0bDcdUvmtGxWn$VVjg/bO9aarL0nkfD2xjrcDKA9CFkE/aZBaGR74pUTzaPfAafxr0yPavIrcawhZikpp7flRs0TSpNQGpZGJMj.:19529:0:99999:7:::
 ```
 
-The $6$ is the algorithm prefix:
+The \$6\$ is the algorithm prefix:
 
-1. $1$ is MD5
-2. $2a$ is Blowfish
-3. $2y$ is Blowfish
-4. $5$ is SHA-256
-5. $6$ is SHA-512
-6. $y$ is yescrypt
+1. \$1\$ is MD5
+2. \$2a\$ is Blowfish
+3. \$2y\$ is Blowfish
+4. \$5\$ is SHA-256
+5. \$6\$ is SHA-512
+6. \$y\$ is yescrypt
 
 So our password was hashed using the SHA-512 algorithm. Entering the hash in the rainbow table does not provide a result.
 
