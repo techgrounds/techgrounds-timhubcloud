@@ -12,8 +12,11 @@ Support is provided in nine different languages: English, Spanish, French, Germa
 What products and services are covered by these support plans can be found on their [Support scope and responsiveness](https://azure.microsoft.com/en-us/support/plans/response/) page:
 
 > Microsoft Azure services released to General Availability and purchased from Microsoft are covered by all support plans.
+
 > Microsoft Azure Public previews are covered by all support plans.
+
 > Non-Microsoft technologies, when provided by Microsoft as part of an Azure product feature, are covered by all support plans, such as the Azure SDK and sample code for Python.
+
 > Support for services purchased through another channel (other than purchased online, for example, Enterprise Agreement) are governed by the agreement terms for that purchase.
 
 The **Basic** plan has the following features:
