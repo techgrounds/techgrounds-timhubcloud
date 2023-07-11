@@ -35,7 +35,7 @@ The service also gives you a handy overview of various recommendations you have 
 ## Assignments
 
 ### Assignment 1
-- [x] Study: Azure Support Plans.
+- [x] Study: Azure Advisor.
 
 ### Sources
 - [AZ-900 Episode 20 | Azure Advisor](https://www.youtube.com/watch?v=58_6MkB2znI)
