@@ -25,9 +25,8 @@ Azure training courses: https://learn.microsoft.com/en-gb/training/courses/az-90
 > - Account
 > - Access management
 
-> *On-premises vs cloud:*
-
-    In the cloud-enabled approach, you are able to shift day to day security responsibilities to your cloud provider and reallocate your resources.
+> *On-premises vs cloud:*<br>
+> ```In the cloud-enabled approach, you are able to shift day to day security responsibilities to your cloud provider and reallocate your resources.```
 
 >> https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility
 
