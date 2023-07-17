@@ -33,13 +33,63 @@ In the cloud-enabled approach, you are able to shift day to day security respons
 
 ### Define cloud models, including public, private, and hybrid
 
+**Public cloud:** all hardware, software, and other supporting infrastructure are owned and managed by the cloud provider. Microsoft Azure is an example of a public cloud. Benefits: *Lowers costs, no maintenance, near-unlimited scalability, high reliability.*
+
+
+**Private cloud:** cloud computing resources used exclusively by one business or organization. Services and infrastructure are always maintained on a private network and the hardware and software are dedicated solely to your organization. It may be hosted on-premises or in a colocation data center. Benefits: *More flexibility, more control, more scalability.*
+
+**Hybrid cloud:** a type of cloud computing that combines on-premises infrastructure—or a private cloud—with a public cloud. Allows data/app movement between environments. Benefits: *Control, Flexibility, Cost-effectiveness, Ease*.
+
+*A multi-cloud is a combination of public and private clouds.*
+
+> https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-are-private-public-hybrid-clouds/
+
 ### Identify appropriate use cases for each cloud model
+
+Public Cloud:
+- Web Applications
+- Software as a Service (SaaS)
+- Development and Testing
+- Big Data Analytics
+- Content Delivery
+
+Private Cloud:
+- Data Security and Compliance
+- Legacy Applications
+- High-Performance Computing
+- Governance or Regulatory Requirements
+
+Hybrid Cloud:
+- Cloudbursting (workloads are “spilled over” to a different cloud environment to meet capacity demands)
+- High Availability and Disaster Recovery
+- Regulatory Requirements
+
+> https://www.flexera.com/blog/cloud/private-and-hybrid-clouds-9-use-cases-and-implementation-advice/
+> https://cloudian.com/guides/hybrid-it/what-is-hybrid-cloud-examples-use-cases-and-challenges/
 
 ### Describe the consumption-based model
 
+You're charged for only what you use. This model is also known as the pay-as-you-go rate.
+
+> https://learn.microsoft.com/en-us/azure/well-architected/cost/design-price
+
 ### Compare cloud pricing models
 
+- *Pay-as-you-go:* consumption-based.
+- *Reserved Instances:* virtual machines that are pre-purchased for one or three years in a specific region.
+- *Hybrid Benefit:* for organizations that own Microsoft licenses in their on-premise data centers. This is known as bring your own license (BYOL).
+- *Spot Instances:* buy unused computing power at a discount of up to 90% compared to pay as you go prices.
+- *Azure Dev/Test:* if you use Azure service for development and testing, you are eligible to substantial discounts.
+
+> https://azure.microsoft.com/en-us/pricing/
+> https://spot.io/resources/azure-pricing/the-complete-guide/
+> https://www.c-sharpcorner.com/article/azure-pricing-models-understanding-the-different-pricing-options/
+
 ### Describe serverless
+
+A cloud computing model offered by Azure that allows developers to build and run applications without managing or provisioning the underlying infrastructure. *Serverless Containerized Microservices, Serverless Kubernetes, Serverless Functions, Azure SQL Database serverless*
+
+> https://azure.microsoft.com/en-us/solutions/serverless
 
 ## The benefits of using cloud services
 
