@@ -7,12 +7,14 @@ Azure training courses: https://learn.microsoft.com/en-gb/training/courses/az-90
 # Cloud concepts
 ## Cloud computing
 
-### Define cloud computing
+### Define **cloud computing**
 
 > Cloud computing is the delivery of computing services—including servers, storage, databases, networking, software, analytics, and intelligence—over the internet (“the cloud”) to offer faster innovation, flexible resources, and economies of scale.
 >> https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-cloud-computing
 
-### Describe the shared responsibility model
+### Describe **the shared responsibility model**
+> ![Shared Responsibility Model](../00_includes/cheatsheet/pic1_sharedresp.png)
+>> https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility
 
 ### Define cloud models, including public, private, and hybrid
 
