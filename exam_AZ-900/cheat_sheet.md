@@ -9,26 +9,27 @@ Azure training courses: https://learn.microsoft.com/en-gb/training/courses/az-90
 
 ### Define **cloud computing**
 
-> Cloud computing is the delivery of computing services—including servers, storage, databases, networking, software, analytics, and intelligence—over the internet (“the cloud”) to offer faster innovation, flexible resources, and economies of scale.
->> https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-cloud-computing
+Cloud computing is the delivery of computing services—including servers, storage, databases, networking, software, analytics, and intelligence—over the internet (“the cloud”) to offer faster innovation, flexible resources, and economies of scale.
+> https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-cloud-computing
 
 ### Describe **the shared responsibility model**
-> Which security tasks are handled by the cloud provider and which tasks are handled by you.
+Which security tasks are handled by the cloud provider and which tasks are handled by you.
 
-> Workload responsibilities vary depending on whether the workload is hosted on Software as a Service (SaaS), Platform as a Service (PaaS), Infrastructure as a Service (IaaS), or in an on-premises datacenter.
+Workload responsibilities vary depending on whether the workload is hosted on Software as a Service (SaaS), Platform as a Service (PaaS), Infrastructure as a Service (IaaS), or in an on-premises datacenter.
 
-<br>![Shared Responsibility Model](../00_includes/cheatsheet/pic1_sharedresp.png)
+![Shared Responsibility Model](../00_includes/cheatsheet/pic1_sharedresp.png)
 
-> Responsibilities you always retain:
-> - Data
-> - Endpoints
-> - Account
-> - Access management
+Responsibilities you always retain:
+- Data
+- Endpoints
+- Account
+- Access management
 
-> *On-premises vs cloud:*<br>
-> ```In the cloud-enabled approach, you are able to shift day to day security responsibilities to your cloud provider and reallocate your resources.```
+*On-premises vs cloud:*
 
->> https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility
+In the cloud-enabled approach, you are able to shift day to day security responsibilities to your cloud provider and reallocate your resources.
+
+> https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility
 
 ### Define cloud models, including public, private, and hybrid
 
