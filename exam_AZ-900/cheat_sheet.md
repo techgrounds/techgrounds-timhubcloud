@@ -214,26 +214,92 @@ he highest level of these Azure architectural components is the *Management Grou
 ## Azure compute and networking services
 
 ### Compare compute types, including containers, virtual machines, and functions
+Azure compute is an on-demand computing service for running cloud-based applications
+
+**Containers**: a virtualization environment for running applications. Doesn't include OS.
+**Virtual Machines**: software emulations of physical computers. Includes OS.
+**Functions**: event-driven, serverless compute platform that helps you develop more efficiently using the programming language of your choice.
+
+> https://www.testpreptraining.com/tutorial/microsoft-azure-fundamentals-az-900/azure-compute-options/
 
 ### Describe virtual machine options, including Azure virtual machines, Azure Virtual Machine Scale Sets, availability sets, and Azure Virtual Desktop
 
+**Azure virtual machines**:  on-demand virtualized computing resources that can be used to run various operating systems and applications (VM).
+**Azure Virtual Machine Scale Sets**: create and manage a group of identical virtual machines.
+**Availability sets**: group VMs together and distribute them across different fault domains and update domains within a single Azure region.
+**Azure Virtual Desktop**: cloud-based virtual desktop infrastructure (VDI) service; virtualized desktops and applications that can be accessed remotely from various devices
+
 ### Describe the resources required for virtual machines
+- Resource Group
+- Virtual Network
+- Storage Account
+- Image/OS
 
 ### Describe application hosting options, including web apps, containers, and virtual machines
+**Web apps**: Azure Static Web Apps is a service that automatically builds and deploys full stack web apps to Azure from a code repository. GitHub or Azure DevOps integration.
+**containers**: Azure Container Instances (ACI) is a managed service that allows you to run containers directly on Azure, without having to manage any virtual machines and without having to adopt a higher-level service.
+**Virtual machines**: Azure Virtual Machines provide an Infrastructure as a Service (IaaS) solution for hosting your applications on either Windows or Linux VMs in the cloud.
+
+> https://learn.microsoft.com/en-us/azure/developer/intro/hosting-apps-on-azure
 
 ### Describe virtual networking, including the purpose of Azure virtual networks, Azure virtual subnets, peering, Azure DNS, Azure VPN Gateway, and ExpressRoute
 
+A virtual network is similar to a traditional network that you'd operate in your own data center. An Azure Virtual Network brings with it extra benefits of Azure's infrastructure such as scale, availability, and isolation.
+
+**Azure virtual networks**: enables many types of Azure resources, such as Azure Virtual Machines (VM), to securely communicate with each other, the internet, and on-premises networks.
+**Azure virtual subnets**: enable you to segment the virtual network into one or more subnetworks and allocate a portion of the virtual network's address space to each subnet.
+**Peering**: enables you to seamlessly connect two or more Virtual Networks in Azure.
+
+- Virtual network peering: Connecting virtual networks within the same Azure region.
+- Global virtual network peering: Connecting virtual networks across Azure regions.
+
+> https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview
+
+**Azure DNS**: a hosting service for DNS domains that provides name resolution by using Microsoft Azure infrastructure.
+**Azure VPN Gateway**: a service that uses a specific type of virtual network gateway to send encrypted traffic between an Azure virtual network and on-premises locations over the public Internet.
+**ExpressRoute**: extend your on-premises networks into the Microsoft cloud over a private connection with the help of a connectivity provider.
+
+> https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview
+
 ### Define public and private endpoints
+**Private Endpoint**: A private endpoint is a network interface that uses a private IP address from your virtual network. This network interface connects you privately and securely to a service that's powered by *Azure Private Link*. By enabling a private endpoint, you're bringing the service into your virtual network. E.g.: Azure Storage, Azure Cosmos DB etc.
+**Public Endpoint**: enable data access to your managed instance from outside the virtual network.
 
 ## Azure storage services
 
 ### Compare Azure Storage services
 
+**Azure Blobs**: A massively scalable object store for text and binary data. Also includes support for big data analytics through Data Lake Storage Gen2.
+**Azure Files**: Managed file shares for cloud or on-premises deployments.
+**Azure Elastic SAN (preview)**: A fully integrated solution that simplifies deploying, scaling, managing, and configuring a SAN in Azure.
+**Azure Queues**: A messaging store for reliable messaging between application components.
+**Azure Tables**: A NoSQL store for schemaless storage of structured data.
+**Azure managed Disks**: Block-level storage volumes for Azure VMs.
+
 ### Describe storage tiers
+**Hot Access tier**: should be used for the data frequently accessed by applications, and that is read or written very often.
+**Cool Access tier**: suitable for data that is not accessed frequently by applications and is expected to be stored for a minimum of 30 days;
+**Archive tier**: used to store rarely accessed or archival data. Its storage rate is the cheapest on Azure, but the data retrieval charges are the highest.
+
+> https://www.whizlabs.com/labs/understanding-azure-blob-storage-tiers
 
 ### Describe redundancy options
 
+Data in an Azure Storage account is always replicated three times in the primary region. Azure Storage offers two options for how your data is replicated in the primary region:
+
+- **Locally redundant storage (LRS)**: copies your data synchronously three times within a single physical location in the primary region. LRS is the least expensive replication option, but isn't recommended for applications requiring high availability or durability.
+- **Zone-redundant storage (ZRS)**: copies your data synchronously across three Azure availability zones in the primary region. For applications requiring high availability, Microsoft recommends using ZRS in the primary region, and also replicating to a secondary region.
+
+> https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy
+
 ### Describe storage account options and storage types
+
+| Type of storage account | Supported storage services | Redundancy options | Usage |
+| ----------- | ----------- | ----------- | ----------- |
+| Standard general-purpose v2 | Blob Storage (including Data Lake Storage1), Queue Storage, Table Storage, and Azure Files | Locally redundant storage (LRS) / geo-redundant storage (GRS) / read-access geo-redundant storage (RA-GRS) / Zone-redundant storage (ZRS) / geo-zone-redundant storage (GZRS) / read-access geo-zone-redundant storage (RA-GZRS)2 | Standard storage account type for blobs, file shares, queues, and tables. Recommended for most scenarios using Azure Storage. If you want support for network file system (NFS) in Azure Files, use the premium file shares account type. |
+| Premium block blobs | Blob Storage (including Data Lake Storage1) | LRS, ZRS | Premium storage account type for block blobs and append blobs. Recommended for scenarios with high transaction rates or that use smaller objects or require consistently low storage latency. |
+| Premium file shares | Azure Files | LRS, ZRS | Premium storage account type for file shares only. Recommended for enterprise or high-performance scale applications. Use this account type if you want a storage account that supports both Server Message Block (SMB) and NFS file shares. |
+| Premium page blobs | Page blobs only | LRS | Premium storage account type for page blobs only. |
 
 ### Identify options for moving files, including AzCopy, Azure Storage Explorer, and Azure File Sync
 
