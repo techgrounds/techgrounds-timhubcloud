@@ -67,6 +67,7 @@ Hybrid Cloud:
 - Regulatory Requirements
 
 > https://www.flexera.com/blog/cloud/private-and-hybrid-clouds-9-use-cases-and-implementation-advice/
+
 > https://cloudian.com/guides/hybrid-it/what-is-hybrid-cloud-examples-use-cases-and-challenges/
 
 ### Describe the consumption-based model
@@ -84,7 +85,9 @@ You're charged for only what you use. This model is also known as the pay-as-you
 - *Azure Dev/Test:* if you use Azure service for development and testing, you are eligible to substantial discounts.
 
 > https://azure.microsoft.com/en-us/pricing/
+
 > https://spot.io/resources/azure-pricing/the-complete-guide/
+
 > https://www.c-sharpcorner.com/article/azure-pricing-models-understanding-the-different-pricing-options/
 
 ### Describe serverless
@@ -103,6 +106,7 @@ A cloud computing model offered by Azure that allows developers to build and run
 - No overpaying for services. 
 
 *Vertical Scaling*: more processing power, CPU, RAM etc. (scaling up)
+
 *Horizontal Scaling*: deploying more resources, VMs, containers. (scaling out)
 
 ### Describe the benefits of reliability and predictability in the cloud
@@ -225,8 +229,11 @@ Azure compute is an on-demand computing service for running cloud-based applicat
 ### Describe virtual machine options, including Azure virtual machines, Azure Virtual Machine Scale Sets, availability sets, and Azure Virtual Desktop
 
 **Azure virtual machines**:  on-demand virtualized computing resources that can be used to run various operating systems and applications (VM).
+
 **Azure Virtual Machine Scale Sets**: create and manage a group of identical virtual machines.
+
 **Availability sets**: group VMs together and distribute them across different fault domains and update domains within a single Azure region.
+
 **Azure Virtual Desktop**: cloud-based virtual desktop infrastructure (VDI) service; virtualized desktops and applications that can be accessed remotely from various devices
 
 ### Describe the resources required for virtual machines
@@ -236,8 +243,11 @@ Azure compute is an on-demand computing service for running cloud-based applicat
 - Image/OS
 
 ### Describe application hosting options, including web apps, containers, and virtual machines
+
 **Web apps**: Azure Static Web Apps is a service that automatically builds and deploys full stack web apps to Azure from a code repository. GitHub or Azure DevOps integration.
+
 **containers**: Azure Container Instances (ACI) is a managed service that allows you to run containers directly on Azure, without having to manage any virtual machines and without having to adopt a higher-level service.
+
 **Virtual machines**: Azure Virtual Machines provide an Infrastructure as a Service (IaaS) solution for hosting your applications on either Windows or Linux VMs in the cloud.
 
 > https://learn.microsoft.com/en-us/azure/developer/intro/hosting-apps-on-azure
@@ -247,7 +257,9 @@ Azure compute is an on-demand computing service for running cloud-based applicat
 A virtual network is similar to a traditional network that you'd operate in your own data center. An Azure Virtual Network brings with it extra benefits of Azure's infrastructure such as scale, availability, and isolation.
 
 **Azure virtual networks**: enables many types of Azure resources, such as Azure Virtual Machines (VM), to securely communicate with each other, the internet, and on-premises networks.
+
 **Azure virtual subnets**: enable you to segment the virtual network into one or more subnetworks and allocate a portion of the virtual network's address space to each subnet.
+
 **Peering**: enables you to seamlessly connect two or more Virtual Networks in Azure.
 
 - Virtual network peering: Connecting virtual networks within the same Azure region.
@@ -256,13 +268,17 @@ A virtual network is similar to a traditional network that you'd operate in your
 > https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview
 
 **Azure DNS**: a hosting service for DNS domains that provides name resolution by using Microsoft Azure infrastructure.
+
 **Azure VPN Gateway**: a service that uses a specific type of virtual network gateway to send encrypted traffic between an Azure virtual network and on-premises locations over the public Internet.
+
 **ExpressRoute**: extend your on-premises networks into the Microsoft cloud over a private connection with the help of a connectivity provider.
 
 > https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview
 
 ### Define public and private endpoints
+
 **Private Endpoint**: A private endpoint is a network interface that uses a private IP address from your virtual network. This network interface connects you privately and securely to a service that's powered by *Azure Private Link*. By enabling a private endpoint, you're bringing the service into your virtual network. E.g.: Azure Storage, Azure Cosmos DB etc.
+
 **Public Endpoint**: enable data access to your managed instance from outside the virtual network.
 
 ## Azure storage services
@@ -270,15 +286,23 @@ A virtual network is similar to a traditional network that you'd operate in your
 ### Compare Azure Storage services
 
 **Azure Blobs**: A massively scalable object store for text and binary data. Also includes support for big data analytics through Data Lake Storage Gen2.
+
 **Azure Files**: Managed file shares for cloud or on-premises deployments.
+
 **Azure Elastic SAN (preview)**: A fully integrated solution that simplifies deploying, scaling, managing, and configuring a SAN in Azure.
+
 **Azure Queues**: A messaging store for reliable messaging between application components.
+
 **Azure Tables**: A NoSQL store for schemaless storage of structured data.
+
 **Azure managed Disks**: Block-level storage volumes for Azure VMs.
 
 ### Describe storage tiers
+
 **Hot Access tier**: should be used for the data frequently accessed by applications, and that is read or written very often.
+
 **Cool Access tier**: suitable for data that is not accessed frequently by applications and is expected to be stored for a minimum of 30 days;
+
 **Archive tier**: used to store rarely accessed or archival data. Its storage rate is the cheapest on Azure, but the data retrieval charges are the highest.
 
 > https://www.whizlabs.com/labs/understanding-azure-blob-storage-tiers
@@ -288,6 +312,7 @@ A virtual network is similar to a traditional network that you'd operate in your
 Data in an Azure Storage account is always replicated three times in the primary region. Azure Storage offers two options for how your data is replicated in the primary region:
 
 - **Locally redundant storage (LRS)**: copies your data synchronously three times within a single physical location in the primary region. LRS is the least expensive replication option, but isn't recommended for applications requiring high availability or durability.
+
 - **Zone-redundant storage (ZRS)**: copies your data synchronously across three Azure availability zones in the primary region. For applications requiring high availability, Microsoft recommends using ZRS in the primary region, and also replicating to a secondary region.
 
 > https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy
@@ -317,12 +342,15 @@ Data in an Azure Storage account is always replicated three times in the primary
 ### Identify options for moving files, including AzCopy, Azure Storage Explorer, and Azure File Sync
 
 **AzCopy**: a command-line tool that moves data into and out of Azure Storage
+
 **Azure Storage Explorer**: GUI app; Upload, download, and manage Azure Storage blobs, files, queues, and tables, as well as Azure Data Lake Storage entities and Azure managed disks.
+
 **Azure File Sync**: transforms Windows Server into a quick cache of your Azure file share.
 
 ### Describe migration options, including Azure Migrate and Azure Data Box
 
 **Azure Migrate**: migration of physical and full virtual machines together with the underlying block-based devices. Includes discovering and assessing on-premises resources tools.
+
 **Azure Data Box**: a family of physical data transfer devices offered by Microsoft Azure. It is designed to help organizations securely transfer large amounts of data to and from Azure, particularly in scenarios where transferring data over the network is impractical or time-consuming.
 
 > https://learn.microsoft.com/en-us/azure/storage/common/storage-migration-overview
@@ -332,13 +360,16 @@ Data in an Azure Storage account is always replicated three times in the primary
 ### Describe directory services in Azure, including Azure Active Directory (Azure AD), part of Microsoft Entra and Azure Active Directory Domain Services (Azure AD DS)
 
 **Azure Active Directory (Azure AD)**: an enterprise identity service that provides single sign-on, multifactor authentication, and conditional access to guard against 99.9 percent of cybersecurity attacks.
+
 **Azure Active Directory Domain Services (Azure AD DS)**: a fully managed cloud-based service provided by Microsoft Azure that offers traditional on-premises Active Directory (AD) capabilities. Azure AD DS allows you to seamlessly extend your on-premises Active Directory environment to the Azure cloud. 
 
 ### Describe authentication methods in Azure, including single sign-on (SSO), multi-factor authentication (MFA), and passwordless
 
 **sign-on (SSO)**: access multiple applications and services with a single set of credentials.
+
 **multi-factor authentication (MFA)**: requiring users to provide additional verification beyond their username and password, such as phone calls, text messages, mobile apps, and hardware tokens.
-**Passwordless**: eliminates the need for passwords altogether and replaces them with alternative authentication methods, such as 
+
+**Passwordless**: eliminates the need for passwords altogether and replaces them with alternative authentication methods.
 
 ### Describe external identities in Azure, including business-to-business (B2B) and business-to-customer (B2C)
 
@@ -454,7 +485,9 @@ Azure tags are widely used to group costs to align with different business units
 As you establish corporate policy and plan your governance strategies, you have options. You can use tools and services like Azure Policy, Azure Blueprints, and Microsoft Defender for Cloud. These tools enforce and automate your organization's governance decisions.
 
 **Azure Blueprints**: enables cloud architects and central information technology groups to define a repeatable set of Azure resources.
+
 **Azure Policy**: helps you create, assign, and manage policies. These policies enforce rules on your resources so those resources stay compliant with your corporate standards and service-level agreements. Azure Policy scans your resources to identify resources that aren't compliant with corporate policies.
+
 **Microsoft Defender for Cloud**: provides a unified view of security across your workloads;  collects, searches, and analyzes security data from various sources, which includes firewalls and other partner solutions; provides actionable security recommendations to fix issues before they can be exploited; applies security policies across your hybrid cloud workloads to ensure compliance with security standards
 
 > https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/govern-org-compliance?tabs=AzureBlueprints
