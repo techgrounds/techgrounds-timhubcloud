@@ -111,36 +111,105 @@ A cloud computing model offered by Azure that allows developers to build and run
 **Predictability**: *Performance predictability* focuses on predicting the resources needed to deliver a positive experience for your customers (Autoscaling, load balancing, and high availability). *Cost predictability* is focused on predicting or forecasting the cost of the cloud spend (predict future costs and adjust your resources as needed).
 
 ### Describe the benefits of security and governance in the cloud
+**Governance:**
+- Set templates help ensure that all your deployed resources meet corporate standards and government regulatory requirements.
+- Update all your deployed resources to new standards as standards change.
+- Cloud-based auditing helps flag any resource that’s out of compliance with your corporate standards and provides mitigation strategies.
+- Software patches and updates may also automatically be applied, which helps with both governance and security.
+
+**Security**:
+- Patches and maintenance taken care of automatically
+- Cloud providers are typically well suited to handle things like distributed denial of service (DDoS) attacks
 
 ### Describe the benefits of manageability in the cloud
+**Management of the cloud**: managing your cloud resources.
+
+- Automatically scale resource deployment based on need.
+- Deploy resources based on a preconfigured template, removing the need for manual configuration.
+- Monitor the health of resources and automatically replace failing resources.
+- Receive automatic alerts based on configured metrics, so you’re aware of performance in real time.
+
+**Management in the cloud**: how you’re able to manage your cloud environment and resources.
+
+- Through a web portal.
+- Using a command line interface.
+- Using APIs.
+- Using PowerShell.
 
 ## Cloud service types
 
+![Service Types](../00_includes/cheatsheet/pic1_servicetypes.png)
+
+> https://medium.com/chenjd-xyz/azure-fundamental-iaas-paas-saas-973e0c406de7
+
 ### Describe infrastructure as a service (IaaS)
+Rent and manage virtual machines, storage, and networking resources, allowing them to have more control over their infrastructure without the need to invest in physical hardware.
 
 ### Describe platform as a service (PaaS)
+A platform for developers to build, deploy, and manage applications over the internet.
 
 ### Describe software as a service (SaaS)
+A platform that allows users to connect to and use cloud-based apps over the Internet. Common examples are email, calendaring, and office tools (such as Microsoft Office 365).
 
 ### Identify appropriate use cases for each cloud service (IaaS, PaaS, and SaaS)
 
+**IaaS**
+- Development and testing environments
+- Scalable web hosting
+- Data backup and recovery
+- High-performance computing
+
+**PaaS**
+- Application development
+- Mobile application backend
+- Continuous integration and deployment
+
+**SaaS**
+- Email and collaboration
+- CRM
+- Project management 
+
+> https://www.eginnovations.com/blog/saas-vs-paas-vs-iaas-examples-differences-how-to-choose/
 # Azure architecture and services
 
 ## The core architectural components of Azure
 
 ### Describe Azure regions, region pairs, and sovereign regions
 
+![Region](../00_includes/cheatsheet/pic1_region.png)
+
+**Azure region**: a set of data centers deployed within a latency-defined perimeter and connected through a dedicated regional low-latency network.
+
+**Region pair**: two Azure regions that are located in close proximity to each other, typically within the same geography or continent, but physically separated to minimize the impact of natural disasters or other localized incidents.  Azure services and resources deployed in the primary region are automatically replicated to the secondary region, creating a failover or disaster recovery capability. *Replication*
+
+**Geography**: area of the world that contains one or more Azure Regions.
+
+> https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview
+
 ### Describe availability zones
+a physically separate data center within an Azure region, with its own power, cooling, and networking infrastructure. The purpose of Availability Zones is to protect applications and data from failures or disruptions within a single data center. *Replication*
 
 ### Describe Azure datacenters
+unique physical buildings—located all over the globe—that house a group of networked computer servers.
 
 ### Describe Azure resources and resource groups
 
+**Resources**: in Azure, a resource is an entity managed by Azure. Virtual machines, virtual networks, and storage accounts are all examples of Azure resources. *Azure Resource Manager* is the deployment and management service for Azure.
+
+**Resource groups**: a container that holds related resources for an Azure solution. Stores metadata about the resources.
+
+> https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal
+
 ### Describe subscriptions
+A logical container used to provision resources in Azure. Subscription is at the level at which the customer is billed based on usage. It also provides a logical segmentation for simplifying administration.
 
 ### Describe management groups
+Management groups provide a governance scope above subscriptions. You organize subscriptions into management groups. For example, you can apply policies to a management group that limits the regions available for virtual machine (VM) creation. This policy would be applied to all nested management groups, subscriptions, and resources.
 
 ### Describe the hierarchy of resource groups, subscriptions, and management groups
+he highest level of these Azure architectural components is the *Management Group*. Management Groups contain one or more *subscriptions*. Inside of Subscriptions are *Resource Groups*. Resource Groups belong to exactly one Subscription. A Subscription can have many resource groups, but a resource group may belong to only one subscription. The *Resources* themselves (the Azure cloud services) can be grouped together in Resource Groups. 
+
+> https://vegibit.com/azure-management-groups-vs-resource-groups/
 
 ## Azure compute and networking services
 
