@@ -527,12 +527,58 @@ Some of the key scenarios that Azure Arc supports are:
 
 ### Describe infrastructure as code (IaC)
 
+Infrastructure as Code (IaC) is an approach to managing and provisioning infrastructure resources using machine-readable configuration files or scripts. It involves defining and deploying infrastructure components, such as virtual machines, networks, storage, and other resources, using code instead of manual processes.
+
+> https://learn.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code
+
 ### Describe Azure Resource Manager (ARM) and ARM templates
+
+**Azure Resource Manager**: is the deployment and management service for Azure. It provides a management layer that enables you to create, update, and delete resources in your Azure account. You use management features, like access control, locks, and tags, to secure and organize your resources after deployment. When you send a request through any of the Azure APIs, tools, or SDKs, Resource Manager receives the request.
+
+> https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview
+
+**ARM Templates**: To implement infrastructure as code for your Azure solutions, use Azure Resource Manager templates (ARM templates). The template is a JavaScript Object Notation (JSON) file that defines the infrastructure and configuration for your project. 
+
+> https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview
 
 ## Monitoring tools in Azure
 
 ### Describe the purpose of Azure Advisor
 
+Advisor is a personalized cloud consultant that helps you follow best practices to optimize your Azure deployments. It analyzes your resource configuration and usage telemetry and then recommends solutions that can help you improve the cost effectiveness, performance, Reliability (formerly called High availability), and security of your Azure resources.
+
+> https://learn.microsoft.com/en-us/azure/advisor/
+
 ### Describe Azure Service Health
 
+Azure Service Health is a combination of three separate smaller services:
+
+*Azure status:* informs you of service outages in Azure on the Azure Status page. The page is a global view of the health of all Azure services across all Azure regions.
+
+*Service health:* provides a personalized view of the health of the Azure services and regions you're using. This is the best place to look for service impacting communications about outages, planned maintenance activities, and other health advisories
+
+*Resource health:* provides information about the health of your individual cloud resources such as a specific virtual machine instance. Using Azure Monitor, you can also configure alerts to notify you of availability changes to your cloud resources.
+
+> https://learn.microsoft.com/en-us/azure/service-health/overview
+
 ### Describe Azure Monitor, including Log Analytics, Azure Monitor alerts, and Application Insights
+
+**Azure Monitor**: a comprehensive monitoring solution for collecting, analyzing, and responding to monitoring data from your cloud and on-premises environments. You can use Azure Monitor to maximize the availability and performance of your applications and services.
+
+> https://learn.microsoft.com/en-us/azure/azure-monitor/overview
+
+**Log Analytics**: a tool in the Azure portal to edit and run log queries from data collected by Azure Monitor logs and interactively analyze their results. You can use Log Analytics queries to retrieve records that match particular criteria, identify trends, analyze patterns, and provide various insights into your data.
+
+> https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-tutorial
+
+**Azure Monitor alerts**: alerts help you detect and address issues before users notice them by proactively notifying you when Azure Monitor data indicates there might be a problem with your infrastructure or application.
+
+> https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+
+**Application Insights**: Application Insights is an extension of Azure Monitor and provides application performance monitoring (APM) features. APM tools are useful to monitor applications from development, through test, and into production in the following ways:
+
+- Proactively understand how an application is performing.
+- Reactively review application execution data to determine the cause of an incident.
+
+
+> https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview?tabs=net
