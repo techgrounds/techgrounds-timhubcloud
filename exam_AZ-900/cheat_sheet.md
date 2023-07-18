@@ -403,29 +403,127 @@ A cloud-native application protection platform (CNAPP) with a set of security me
 # Azure management and governance
 ## Describe cost management in Azure
 
+Monitor, allocate, and optimize cloud costs with transparency, accuracy, and efficiency.
+
 ### Describe factors that can affect costs in Azure
+
+- Pricing Models
+- Resource Type
+- Services
+- Location
+- Azure Billing Zones
+    - Zone 1	USA, Canada, Europe, UK
+    - DE Zone 1	Germany
+    - Zone 2	Japan,  Korea, Australia, India
+    - Zone 3	Brazil
+
+> https://granulate.io/blog/understanding-azure-costs-reduce/
 
 ### Compare the pricing calculator and the Total Cost of Ownership (TCO) Calculator
 
+**Azure Pricing Calculator**: helps users estimate the costs associated with specific Azure services and configurations.
+
+**Azure Total Cost of Ownership (TCO) Calculator**: helps organizations evaluate the cost savings and benefits of migrating their on-premises infrastructure to Azure.
+
+Pricing calculator: https://azure.microsoft.com/en-us/pricing/calculator/
+Total Cost of Ownership: https://azure.microsoft.com/en-us/pricing/tco/calculator/
+
 ### Describe cost management capabilities in Azure
+
+Microsoft Cost Management is a suite of tools that help organizations monitor, allocate, and optimize the cost of their Microsoft Cloud workloads. 
+
+Examples:
+
+- eport on and analyze costs in the Azure portal, Microsoft 365 admin center, or externally by exporting data.
+- Monitor costs proactively with budget, anomaly, and scheduled alerts.
+- Split shared costs with cost allocation rules.
+- Create and organize subscriptions to customize invoices.
+- Configure payment options and pay invoices.
+- Manage your billing information, such as legal entity, tax information, and agreements.
+
+> https://learn.microsoft.com/en-us/azure/cost-management-billing/cost-management-billing-overview
 
 ### Describe the purpose of tags
 
+Azure tags are widely used to group costs to align with different business units, engineering environments, and cost departments. Tags provide the visibility needed for businesses to manage and allocate costs across the different groups.
+
+> https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/enable-tag-inheritance
+
 ## Features and tools in Azure for governance and compliance
+
+As you establish corporate policy and plan your governance strategies, you have options. You can use tools and services like Azure Policy, Azure Blueprints, and Microsoft Defender for Cloud. These tools enforce and automate your organization's governance decisions.
+
+**Azure Blueprints**: enables cloud architects and central information technology groups to define a repeatable set of Azure resources.
+**Azure Policy**: helps you create, assign, and manage policies. These policies enforce rules on your resources so those resources stay compliant with your corporate standards and service-level agreements. Azure Policy scans your resources to identify resources that aren't compliant with corporate policies.
+**Microsoft Defender for Cloud**: provides a unified view of security across your workloads;  collects, searches, and analyzes security data from various sources, which includes firewalls and other partner solutions; provides actionable security recommendations to fix issues before they can be exploited; applies security policies across your hybrid cloud workloads to ensure compliance with security standards
+
+> https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/govern-org-compliance?tabs=AzureBlueprints
 
 ### Describe the purpose of Microsoft Purview in Azure
 
+Microsoft Purview's solutions in the governance portal provide a unified data governance service that helps you manage your on-premises, multicloud, and software-as-a-service (SaaS) data. The Microsoft Purview governance portal allows you to:
+
+- Create a holistic, up-to-date map of your data landscape with automated data discovery, sensitive data classification, and end-to-end data lineage.
+- Enable data curators and security administrators to manage and keep your data estate secure.
+- Empower data consumers to find valuable, trustworthy data.
+
+> https://learn.microsoft.com/en-us/azure/purview/
+
 ### Describe the purpose of Azure Policy
 
+Azure Policy helps you create, assign, and manage policies. These policies enforce rules on your resources so those resources stay compliant with your corporate standards and service-level agreements. Azure Policy scans your resources to identify resources that aren't compliant with corporate policies.
+
+> https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/govern-org-compliance?tabs=AzurePolicy
+
 ### Describe the purpose of resource locks
+
+As an administrator, you can lock an Azure subscription, resource group, or resource to protect them from accidental user deletions and modifications. The lock overrides any user permissions.
+
+> https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources?tabs=json
 
 ## Features and tools for managing and deploying Azure resources
 
 ### Describe the Azure portal
 
+The Azure portal is a web-based, unified console that provides an alternative to command-line tools. With the Azure portal, you can manage your Azure subscription using a graphical user interface. You can build, manage, and monitor everything from simple web apps to complex cloud deployments in the portal.
+
+> https://learn.microsoft.com/en-us/azure/azure-portal/
+
 ### Describe Azure Cloud Shell, including Azure Command-Line Interface (CLI) and Azure PowerShell
 
+**Azure Cloud Shell**: Azure Cloud Shell is an interactive, authenticated, browser-accessible terminal for managing Azure resources. It provides the flexibility of choosing the shell experience that best suits the way you work, either Bash or PowerShell.
+
+> https://learn.microsoft.com/en-us/azure/cloud-shell/overview
+
+**Azure CLI**: the Azure Command-Line Interface (CLI) is a cross-platform command-line tool to connect to Azure and execute administrative commands on Azure resources. It allows the execution of commands through a terminal using interactive command-line prompts or a script.
+
+> https://learn.microsoft.com/en-us/cli/azure/what-is-azure-cli
+
+**Azure PowerShell**: Azure PowerShell is a set of cmdlets for managing Azure resources directly from PowerShell. Azure PowerShell is designed to make it easy to learn and get started with, but provides powerful features for automation.
+
+> https://learn.microsoft.com/en-us/powershell/azure/what-is-azure-powershell?view=azps-10.1.0
+
 ### Describe the purpose of Azure Arc
+
+Azure Arc simplifies governance and management by delivering a consistent multicloud and on-premises management platform.
+
+Azure Arc provides a centralized, unified way to:
+
+- Manage your entire environment together by projecting your existing non-Azure and/or on-premises resources into Azure Resource Manager.
+- Manage virtual machines, Kubernetes clusters, and databases as if they are running in Azure.
+- Use familiar Azure services and management capabilities, regardless of where your resources live.
+- Continue using traditional ITOps while introducing DevOps practices to support new cloud native patterns in your environment.
+- Configure custom locations as an abstraction layer on top of Azure Arc-enabled Kubernetes clusters and cluster extensions.
+
+Some of the key scenarios that Azure Arc supports are:
+
+- Implement consistent inventory, management, governance, and security for servers across your environment.
+- Configure Azure VM extensions to use Azure management services to monitor, secure, and update your servers.
+- Manage and govern Kubernetes clusters at scale.
+- Use GitOps to deploy configurations across one or more clusters from Git repositories.
+- Zero-touch compliance and configuration for Kubernetes clusters using Azure Policy.
+
+> https://learn.microsoft.com/en-us/azure/azure-arc/overview
 
 ### Describe infrastructure as code (IaC)
 
