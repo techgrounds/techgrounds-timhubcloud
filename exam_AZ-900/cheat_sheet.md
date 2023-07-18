@@ -294,6 +294,17 @@ Data in an Azure Storage account is always replicated three times in the primary
 
 ### Describe storage account options and storage types
 
+**Storage account name**: 3-24 chars, numbers and lowercase letters only. Unique within Azure.
+
+**Storage account endpoints**: every object that you store in Azure Storage has a URL address that includes your unique account name.
+
+- Standard endpoints (recommended). By default, you can create up to 250 storage accounts per region with standard endpoints in a given subscription. With a quota increase, you can create up to 500 storage accounts with standard endpoints per region. For more information, see Increase Azure Storage account quotas.
+- Azure DNS zone endpoints (preview). You can create up to 5000 storage accounts per region with Azure DNS zone endpoints in a given subscription.
+
+**Storage account encryption**: all data in your storage account is automatically encrypted on the service side. 
+
+**Storage account billing**: Azure Storage bills based on your storage account usage. All objects in a storage account are billed together as a group.
+
 | Type of storage account | Supported storage services | Redundancy options | Usage |
 | ----------- | ----------- | ----------- | ----------- |
 | Standard general-purpose v2 | Blob Storage (including Data Lake Storage1), Queue Storage, Table Storage, and Azure Files | Locally redundant storage (LRS) / geo-redundant storage (GRS) / read-access geo-redundant storage (RA-GRS) / Zone-redundant storage (ZRS) / geo-zone-redundant storage (GZRS) / read-access geo-zone-redundant storage (RA-GZRS)2 | Standard storage account type for blobs, file shares, queues, and tables. Recommended for most scenarios using Azure Storage. If you want support for network file system (NFS) in Azure Files, use the premium file shares account type. |
@@ -301,27 +312,93 @@ Data in an Azure Storage account is always replicated three times in the primary
 | Premium file shares | Azure Files | LRS, ZRS | Premium storage account type for file shares only. Recommended for enterprise or high-performance scale applications. Use this account type if you want a storage account that supports both Server Message Block (SMB) and NFS file shares. |
 | Premium page blobs | Page blobs only | LRS | Premium storage account type for page blobs only. |
 
+> https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview
+
 ### Identify options for moving files, including AzCopy, Azure Storage Explorer, and Azure File Sync
 
+**AzCopy**: a command-line tool that moves data into and out of Azure Storage
+**Azure Storage Explorer**: GUI app; Upload, download, and manage Azure Storage blobs, files, queues, and tables, as well as Azure Data Lake Storage entities and Azure managed disks.
+**Azure File Sync**: transforms Windows Server into a quick cache of your Azure file share.
+
 ### Describe migration options, including Azure Migrate and Azure Data Box
+
+**Azure Migrate**: migration of physical and full virtual machines together with the underlying block-based devices. Includes discovering and assessing on-premises resources tools.
+**Azure Data Box**: a family of physical data transfer devices offered by Microsoft Azure. It is designed to help organizations securely transfer large amounts of data to and from Azure, particularly in scenarios where transferring data over the network is impractical or time-consuming.
+
+> https://learn.microsoft.com/en-us/azure/storage/common/storage-migration-overview
 
 ## Azure identity, access, and security
 
 ### Describe directory services in Azure, including Azure Active Directory (Azure AD), part of Microsoft Entra and Azure Active Directory Domain Services (Azure AD DS)
 
+**Azure Active Directory (Azure AD)**: an enterprise identity service that provides single sign-on, multifactor authentication, and conditional access to guard against 99.9 percent of cybersecurity attacks.
+**Azure Active Directory Domain Services (Azure AD DS)**: a fully managed cloud-based service provided by Microsoft Azure that offers traditional on-premises Active Directory (AD) capabilities. Azure AD DS allows you to seamlessly extend your on-premises Active Directory environment to the Azure cloud. 
+
 ### Describe authentication methods in Azure, including single sign-on (SSO), multi-factor authentication (MFA), and passwordless
+
+**sign-on (SSO)**: access multiple applications and services with a single set of credentials.
+**multi-factor authentication (MFA)**: requiring users to provide additional verification beyond their username and password, such as phone calls, text messages, mobile apps, and hardware tokens.
+**Passwordless**: eliminates the need for passwords altogether and replaces them with alternative authentication methods, such as 
 
 ### Describe external identities in Azure, including business-to-business (B2B) and business-to-customer (B2C)
 
+Azure AD External Identities refers to all the ways you can securely interact with users outside of your organization. With External Identities, external users can "bring their own identities." Whether they have a corporate or government-issued digital identity, or an unmanaged social identity like Google or Facebook, they can use their own credentials to sign in.
+
+**business-to-business (B2B)**: allows organizations to securely collaborate with external users, such as partners, vendors, or customers. It enables organizations to grant access to their resources and applications to users from other organizations without requiring them to create separate user accounts. 
+
+**and business-to-customer (B2C)**: a cloud-based customer identity and access management solution that focuses on providing authentication and authorization services for customer-facing applications. It is designed for business-to-consumer scenarios and supports large-scale identity management for millions of users.
+
+> https://learn.microsoft.com/en-us/azure/active-directory/external-identities/external-identities-overview
+
 ### Describe Conditional Access in Azure AD
+
+Conditional Access policies at their simplest are if-then statements, if a user wants to access a resource, then they must complete an action. Example: A payroll manager wants to access the payroll application and is required to do multifactor authentication to access it. Use Conditional Access policies to apply the right access controls when needed to keep your organization secure.
+
+Signals include: User or group membership, Device, IP Location information, Application, Real-time and calculated risk detection, Microsoft Defender for Cloud Apps.
+
+> https://learn.microsoft.com/en-us/azure/active-directory/conditional-access/overview
 
 ### Describe Azure role-based access control (RBAC)
 
+RBAC helps you manage who has access to Azure resources, what they can do with those resources, and what areas they have access to. Azure RBAC is an authorization system built on Azure Resource Manager that provides fine-grained access management to Azure resources. Examples:
+
+- Allow one user to manage virtual machines in a subscription and another user to manage virtual networks
+- Allow a DBA group to manage SQL databases in a subscription
+- Allow a user to manage all resources in a resource group, such as virtual machines, websites, and subnets
+- Allow an application to access all resources in a resource group
+
+The way you control access to resources using Azure RBAC is to assign Azure roles using three elements:
+
+- *Security principal:* an object that represents a user, group, service principal, or managed identity that is requesting access to Azure resources.
+- *Role definition:* a collection of permissions; write, delete etc.
+- *Scope*: the set of resources that the access applies to.
+
+> https://learn.microsoft.com/en-us/azure/role-based-access-control/overview
+
 ### Describe the concept of Zero Trust
 
+A new security model that assumes breach and verifies each request as though it originated from an uncontrolled network. It is an approach to cybersecurity that emphasizes the need to verify and validate every access request and not automatically trust any user or device within a network, regardless of their location or origin.
+
+> https://learn.microsoft.com/en-us/azure/security/fundamentals/zero-trust
+
 ### Describe the purpose of the defense-in-depth model
+An information security strategy that employs multiple layers of security controls to protect systems and data. Examples of security layers:
+
+- Perimitor Security (firewalls, intrusion detection systems)
+- Identity and Access Management (IAM)
+- Network Segmentation
+- Data Encryption
+- User Education and Awareness
 
 ### Describe the purpose of Microsoft Defender for Cloud
+
+A cloud-native application protection platform (CNAPP) with a set of security measures and practices designed to protect cloud-based applications from various cyber threats and vulnerabilities. It is a combination of:
+
+- A development security operations (DevSecOps) solution that unifies security management at the code level across multicloud and multiple-pipeline environments
+- A cloud security posture management (CSPM) solution that surfaces actions that you can take to prevent breaches
+-  A cloud workload protection platform (CWPP) with specific protections for servers, containers, storage, databases, and other workloads
+
+> https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction
 
 # Azure management and governance
 ## Describe cost management in Azure
