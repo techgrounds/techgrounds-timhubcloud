@@ -4,6 +4,8 @@ This cheat sheet is based on the [Full Exam Guide July 31, 2023](https://learn.m
 
 Azure training courses: https://learn.microsoft.com/en-gb/training/courses/az-900t00
 
+Practice Assessment for Exam AZ-900 Microsoft Azure Fundamentals: https://learn.microsoft.com/en-us/certifications/exams/az-900/practice/assessment?assessment-type=practice&assessmentId=23
+
 # Cloud concepts
 ## Cloud computing
 
@@ -94,8 +96,19 @@ A cloud computing model offered by Azure that allows developers to build and run
 ## The benefits of using cloud services
 
 ### Describe the benefits of high availability and scalability in the cloud
+**High Availability**: it’s important the resources are available when needed. High availability focuses on ensuring maximum availability, regardless of disruptions or events that may occur.
+
+**Scalability**: the ability to adjust resources to meet demand.
+- Combats peak traffic/overwhelmed systems.
+- No overpaying for services. 
+
+*Vertical Scaling*: more processing power, CPU, RAM etc. (scaling up)
+*Horizontal Scaling*: deploying more resources, VMs, containers. (scaling out)
 
 ### Describe the benefits of reliability and predictability in the cloud
+**Reliability**: the ability of a system to recover from failures and continue to function.
+
+**Predictability**: *Performance predictability* focuses on predicting the resources needed to deliver a positive experience for your customers (Autoscaling, load balancing, and high availability). *Cost predictability* is focused on predicting or forecasting the cost of the cloud spend (predict future costs and adjust your resources as needed).
 
 ### Describe the benefits of security and governance in the cloud
 
