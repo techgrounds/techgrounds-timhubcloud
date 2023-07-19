@@ -201,6 +201,12 @@ unique physical buildings—located all over the globe—that house a group of n
 **Resources**: in Azure, a resource is an entity managed by Azure. Virtual machines, virtual networks, and storage accounts are all examples of Azure resources. *Azure Resource Manager* is the deployment and management service for Azure.
 
 **Resource groups**: a container that holds related resources for an Azure solution. Stores metadata about the resources.
+- 10,000 management groups can be supported in a single directory.
+- A management group tree can support up to six levels of depth.
+- This limit doesn't include the Root level or the subscription level.
+- Each management group and subscription can only support one parent.
+- Each management group can have many children.
+- All subscriptions and management groups are within a single hierarchy in each directory
 
 > https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal
 
@@ -520,11 +526,31 @@ As an administrator, you can lock an Azure subscription, resource group, or reso
 
 The Azure portal is a web-based, unified console that provides an alternative to command-line tools. With the Azure portal, you can manage your Azure subscription using a graphical user interface. You can build, manage, and monitor everything from simple web apps to complex cloud deployments in the portal.
 
-> https://learn.microsoft.com/en-us/azure/azure-portal/
+Browsers Supported:
+
+    Microsoft Edge (latest version)
+    Safari (latest version, Mac only)
+    Chrome (latest version)
+    Firefox (latest version)
+
+Azure mobile app: available for iOS and Android.
+
+> https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-overview
 
 ### Describe Azure Cloud Shell, including Azure Command-Line Interface (CLI) and Azure PowerShell
 
-**Azure Cloud Shell**: Azure Cloud Shell is an interactive, authenticated, browser-accessible terminal for managing Azure resources. It provides the flexibility of choosing the shell experience that best suits the way you work, either Bash or PowerShell.
+**Azure Cloud Shell**: Azure Cloud Shell is an interactive, authenticated, **browser-accessible** terminal for managing Azure resources. It provides the flexibility of choosing the shell experience that best suits the way you work, either Bash or PowerShell.
+
+Can be used from:
+
+    portal.azure.com
+    shell.azure.com
+    Azure CLI documentation
+    Azure PowerShell documentation
+    Azure mobile app
+    Visual Studio Code Azure Account extension
+
+Commands run inside the container can't access resources in a private virtual network. To provide access to your private resources, you can deploy Cloud Shell into an Azure Virtual Network that you control. This is referred to as VNET isolation.
 
 > https://learn.microsoft.com/en-us/azure/cloud-shell/overview
 
@@ -538,7 +564,7 @@ The Azure portal is a web-based, unified console that provides an alternative to
 
 ### Describe the purpose of Azure Arc
 
-Azure Arc simplifies governance and management by delivering a consistent multicloud and on-premises management platform.
+Azure Arc is a Microsoft Azure service that extends Azure's management and governance capabilities to resources and workloads running outside of the Azure cloud. Azure Arc simplifies governance and management by delivering a consistent multicloud and on-premises management platform.
 
 Azure Arc provides a centralized, unified way to:
 
@@ -572,6 +598,17 @@ Infrastructure as Code (IaC) is an approach to managing and provisioning infrast
 
 **ARM Templates**: To implement infrastructure as code for your Azure solutions, use Azure Resource Manager templates (ARM templates). The template is a JavaScript Object Notation (JSON) file that defines the infrastructure and configuration for your project. 
 
+Limits:
+
+    4 MB
+    256 parameters
+    256 variables
+    800 resources (including copy count)
+    64 output values
+    10 unique locations per subscription/tenant/management group scope
+    24,576 characters in a template expression
+
+
 > https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview
 
 ## Monitoring tools in Azure
@@ -580,7 +617,9 @@ Infrastructure as Code (IaC) is an approach to managing and provisioning infrast
 
 Advisor is a personalized cloud consultant that helps you follow best practices to optimize your Azure deployments. It analyzes your resource configuration and usage telemetry and then recommends solutions that can help you improve the cost effectiveness, performance, Reliability (formerly called High availability), and security of your Azure resources.
 
-> https://learn.microsoft.com/en-us/azure/advisor/
+Cost, Security, Reliability, Operational Excellence, Performance
+
+> https://learn.microsoft.com/en-us/azure/advisor/advisor-overview
 
 ### Describe Azure Service Health
 
@@ -592,19 +631,45 @@ Azure Service Health is a combination of three separate smaller services:
 
 *Resource health:* provides information about the health of your individual cloud resources such as a specific virtual machine instance. Using Azure Monitor, you can also configure alerts to notify you of availability changes to your cloud resources.
 
+Service Issues, Planned Maintenance, Health Advisories, Security Advisories, Resourse Health, Health Alerts
+
 > https://learn.microsoft.com/en-us/azure/service-health/overview
 
 ### Describe Azure Monitor, including Log Analytics, Azure Monitor alerts, and Application Insights
 
 **Azure Monitor**: a comprehensive monitoring solution for collecting, analyzing, and responding to monitoring data from your cloud and on-premises environments. You can use Azure Monitor to maximize the availability and performance of your applications and services.
 
+Can Monitor:
+
+    Applications
+    Virtual machines
+    Guest operating systems
+    Containers including Prometheus metrics
+    Databases
+    Security events in combination with Azure Sentinel
+    Networking events and health in combination with Network Watcher
+    Custom sources that use the APIs to get data into Azure Monitor
+
+The Three Pillars of Observability: Metrics, Logs and Traces
+
+Multi-Cloud monitoring: In addition to monitoring services and application in Azure, Azure Monitor can provide complete monitoring for your resources and applications running in other clouds including Amazon Web Services (AWS) and Google Cloud Platform (GCP)
+
 > https://learn.microsoft.com/en-us/azure/azure-monitor/overview
 
 **Log Analytics**: a tool in the Azure portal to edit and run log queries from data collected by Azure Monitor logs and interactively analyze their results. You can use Log Analytics queries to retrieve records that match particular criteria, identify trends, analyze patterns, and provide various insights into your data.
 
+In September 2018, Microsoft combined Azure Monitor, Log Analytics, and Application Insights into a single service to provide powerful end-to-end monitoring of your applications and the components they rely on.
+
 > https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-tutorial
 
 **Azure Monitor alerts**: alerts help you detect and address issues before users notice them by proactively notifying you when Azure Monitor data indicates there might be a problem with your infrastructure or application.
+
+An alert rule combines:
+
+    The resources to be monitored.
+    The signal or data from the resource.
+    Conditions.
+
 
 > https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
 
