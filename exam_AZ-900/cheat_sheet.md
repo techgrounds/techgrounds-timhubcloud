@@ -442,6 +442,12 @@ A cloud-native application protection platform (CNAPP) with a set of security me
 
 Monitor, allocate, and optimize cloud costs with transparency, accuracy, and efficiency.
 
+Azure Free Account:
+
+1. Popular services free for 12 months
+2. 55+ other services always free
+3. Start with $200 credit
+
 ### Describe factors that can affect costs in Azure
 
 - Pricing Models
@@ -463,6 +469,7 @@ Monitor, allocate, and optimize cloud costs with transparency, accuracy, and eff
 **Azure Total Cost of Ownership (TCO) Calculator**: helps organizations evaluate the cost savings and benefits of migrating their on-premises infrastructure to Azure.
 
 Pricing calculator: https://azure.microsoft.com/en-us/pricing/calculator/
+
 Total Cost of Ownership: https://azure.microsoft.com/en-us/pricing/tco/calculator/
 
 ### Describe cost management capabilities in Azure
@@ -478,7 +485,13 @@ Examples:
 - Configure payment options and pay invoices.
 - Manage your billing information, such as legal entity, tax information, and agreements.
 
-> https://learn.microsoft.com/en-us/azure/cost-management-billing/cost-management-billing-overview
+**Power BI**: While cost analysis offers a rich, interactive experience for analyzing and surfacing insights about your costs, there are times when you need to build more extensive dashboards and complex reports or combine costs with internal data. The Cost Management template app for Power BI is a great way to get up and running with Power BI quickly. (requires Enterprise Administrator account)
+
+**Azure Reservations**: help you save money by committing to one-year or three-year plans for multiple products. Committing allows you to get a discount on the resources you use. Reservations can significantly reduce your resource costs by up to 72% from pay-as-you-go prices.
+
+> https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/reporting-get-started
+
+> https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/analyze-cost-data-azure-cost-management-power-bi-template-app
 
 ### Describe the purpose of tags
 
@@ -500,11 +513,16 @@ As you establish corporate policy and plan your governance strategies, you have 
 
 ### Describe the purpose of Microsoft Purview in Azure
 
-Microsoft Purview's solutions in the governance portal provide a unified data governance service that helps you manage your on-premises, multicloud, and software-as-a-service (SaaS) data. The Microsoft Purview governance portal allows you to:
+Microsoft Purview is a family of data governance, risk, and compliance solutions that can help your organization govern, protect, and manage your entire data estate. Microsoft Purview solutions provide integrated coverage and help address the recent increases in remote user connectivity, the fragmentation of data across organizations, and the blurring of traditional IT management roles.
 
-- Create a holistic, up-to-date map of your data landscape with automated data discovery, sensitive data classification, and end-to-end data lineage.
-- Enable data curators and security administrators to manage and keep your data estate secure.
-- Empower data consumers to find valuable, trustworthy data.
+Microsoft Purview combines the former Azure Purview and Microsoft 365 compliance solutions and services together into a single brand. Together, these solutions help your organization to:
+
+    Gain visibility into data assets across your organization
+    Enable access to your data, security, and risk solutions
+    Safeguard and manage sensitive data across clouds, apps, and endpoints
+    Manage end-to-end data risks and regulatory compliance
+    Empower your organization to govern, protect, and manage data in new, comprehensive ways
+
 
 > https://learn.microsoft.com/en-us/azure/purview/
 
