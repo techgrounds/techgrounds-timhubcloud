@@ -227,7 +227,9 @@ he highest level of these Azure architectural components is the *Management Grou
 Azure compute is an on-demand computing service for running cloud-based applications
 
 **Containers**: a virtualization environment for running applications. Doesn't include OS.
+
 **Virtual Machines**: software emulations of physical computers. Includes OS.
+
 **Functions**: event-driven, serverless compute platform that helps you develop more efficiently using the programming language of your choice.
 
 > https://www.testpreptraining.com/tutorial/microsoft-azure-fundamentals-az-900/azure-compute-options/
@@ -347,11 +349,19 @@ Data in an Azure Storage account is always replicated three times in the primary
 
 ### Identify options for moving files, including AzCopy, Azure Storage Explorer, and Azure File Sync
 
-**AzCopy**: a command-line tool that moves data into and out of Azure Storage
+**AzCopy**: a command-line tool that moves data into and out of Azure Storage. AzCopy is a command-line utility that you can use to copy blobs or files to or from a storage account. Allows:
+
+    Upload, Download, Copy between storage accounts, Synchronize between blob container and local files.
 
 **Azure Storage Explorer**: GUI app; Upload, download, and manage Azure Storage blobs, files, queues, and tables, as well as Azure Data Lake Storage entities and Azure managed disks.
 
-**Azure File Sync**: transforms Windows Server into a quick cache of your Azure file share.
+**Azure File Sync**: (for multiple offices collaborating on File Shares) Azure File Sync enables centralizing your organization's file shares in Azure Files, while keeping the flexibility, performance, and compatibility of a Windows file server. While some users may opt to keep a full copy of their data locally, Azure File Sync additionally has the ability to transform Windows Server into a quick cache of your Azure file share. You can use any protocol that's available on Windows Server to access your data locally, including SMB, NFS, and FTPS. You can have as many caches as you need across the world.
+
+*Cloud tiering:* with cloud tiering enabled, your most frequently accessed files are cached on your local server and your least frequently accessed files are tiered to the cloud. 
+
+*Multi-site access and sync:* Azure File Sync is ideal for distributed access scenarios. For each of your offices, you can provision a local Windows Server as part of your Azure File Sync deployment. Changes made to a server in one office automatically sync to the servers in all other offices.
+
+> https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-introduction
 
 ### Describe migration options, including Azure Migrate and Azure Data Box
 
@@ -375,7 +385,11 @@ Data in an Azure Storage account is always replicated three times in the primary
 
 **multi-factor authentication (MFA)**: requiring users to provide additional verification beyond their username and password, such as phone calls, text messages, mobile apps, and hardware tokens.
 
-**Passwordless**: eliminates the need for passwords altogether and replaces them with alternative authentication methods.
+**Passwordless**: eliminates the need for passwords altogether and replaces them with alternative authentication methods. Recommended methods:
+
+    Windows Hello, FIDO2 security keys, and the Microsoft Authenticator app
+
+> https://learn.microsoft.com/en-us/azure/active-directory/authentication/concept-authentication-methods
 
 ### Describe external identities in Azure, including business-to-business (B2B) and business-to-customer (B2C)
 
@@ -523,18 +537,38 @@ Microsoft Purview combines the former Azure Purview and Microsoft 365 compliance
     Manage end-to-end data risks and regulatory compliance
     Empower your organization to govern, protect, and manage data in new, comprehensive ways
 
-
 > https://learn.microsoft.com/en-us/azure/purview/
 
 ### Describe the purpose of Azure Policy
 
-Azure Policy helps you create, assign, and manage policies. These policies enforce rules on your resources so those resources stay compliant with your corporate standards and service-level agreements. Azure Policy scans your resources to identify resources that aren't compliant with corporate policies.
+Azure Policy helps to enforce organizational standards and to assess compliance at-scale. Through its compliance dashboard, it provides an aggregated view to evaluate the overall state of the environment, with the ability to drill down to the per-resource, per-policy granularity. It also helps to bring your resources to compliance through bulk remediation for existing resources and automatic remediation for new resources.
 
-> https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/govern-org-compliance?tabs=AzurePolicy
+Specifically, some useful governance actions you can enforce with Azure Policy include:
+
+    Ensuring your team deploys Azure resources only to allowed regions
+    Enforcing the consistent application of taxonomic tags
+    Requiring resources to send diagnostic logs to a Log Analytics workspace
+
+Examples of how an organization wants the platform to respond to a non-compliant resource include:
+
+    Deny the resource change
+    Log the change to the resource
+    Alter the resource before the change
+    Alter the resource after the change
+    Deploy related compliant resources
+    Block actions on resources
+
+Azure Policy makes each of these business responses possible through the application of effects. Effects are set in the policy rule portion of the policy definition.
+
+**Azure Policy vs Azure RBAC**: Azure Policy evaluates state by examining properties on resources that are represented in Resource Manager and properties of some Resource Providers. Azure RBAC focuses on managing user actions at different scopes. If control of an action is required based on user information, then Azure RBAC is the correct tool to use. Even if an individual has access to perform an action, if the result is a non-compliant resource, Azure Policy still blocks the create or update.
+
+> https://learn.microsoft.com/en-us/azure/governance/policy/overview
 
 ### Describe the purpose of resource locks
 
 As an administrator, you can lock an Azure subscription, resource group, or resource to protect them from accidental user deletions and modifications. The lock overrides any user permissions.
+
+**Lock inheritance**: When you apply a lock at a parent scope, all resources within that scope inherit the same lock. 
 
 > https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources?tabs=json
 
