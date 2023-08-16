@@ -1,5 +1,3 @@
-# Werkt zonder problemen
-
 '''
 The output should be:
 
@@ -7,7 +5,7 @@ The output should be:
 import random
 
 # generate random int
-goal = random.randint(1,100)
+goal = random.randint(1,4)
 
 win = False
 tries = 0
