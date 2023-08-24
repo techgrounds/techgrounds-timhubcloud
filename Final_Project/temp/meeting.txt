@@ -1,0 +1,9 @@
+- 1 region, connect via peering
+- basic cheapest option, won't save script for a long time (can always upgrade)
+- 1 NSG per subnet per vnet, NSG sufficient as a firewall
+- IP range, keep as is, taking future into account
+- size, cpu etc go for cheapest possible/all minimum
+- Platform managed keys, keyvault
+
+- 1 role: admin role
+- trusted location: will get IP from techgrounds
