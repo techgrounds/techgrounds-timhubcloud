@@ -34,3 +34,50 @@ Second problem solution found on stackoverflow:
 
 ## Learnings
 How to analyze a product owners' requirement and formulate questions; how to deploy resources using bicep, parameter file, modules etc.
+
+---
+
+# Log August 23, 2023
+
+## Daily report
+Had our meeting with the product owner. A lot of questions were answered. Started lining out a deployment plan.
+
+## Obstacles
+No obstacles.
+
+## Solutions
+No solutions needed.
+
+## Learnings
+As more in depth questions to get a good grasp of the required infrastructure.
+
+---
+
+# Log August 24, 2023
+
+## Daily report
+Started building the first version of the main bicep and several modules. Created the network, subnets, NSGs, keyvault and storage account.
+
+## Obstacles
+Had to deal with a lot of error fixing. One of the biggest was the creation of a keyvault to hold the encryption keys which required soft delete enabled and purging not allowed, meaning I couldn't remove the container in a deleted state. At the same time the key generation failed because a key already existed from a previous deployment with a different expiration date.
+
+## Solutions
+Made the expiration date static for the moment. Will fix in a future version.
+
+## Learnings
+How to deal with errors and how to use what-if to test deployments without deloying.
+
+---
+
+# Log August 25, 2023
+
+## Daily report
+Created a blob storage module for the post-deployment scripts.
+
+## Obstacles
+
+
+## Solutions
+
+
+## Learnings

@@ -2,6 +2,8 @@
 // ----- MAIN -----
 
 // Temporary commands:
+
+// az deployment sub what-if --location westus3 --template-file main.bicep
 // az deployment sub create --location westus3 --template-file main.bicep
 // az keyvault purge --name keyVault-vxnackc5ttjdq
 
@@ -66,5 +68,13 @@ module storageAccount 'modules/storage.bicep' = {
     location: location
     managedIdentityName : managedIdentityName
     keyVaultName : keyVault.outputs.keyVaultName
+  }
+}
+
+module blob 'modules/blob.bicep' = {
+  name: 'blob'
+  scope: newRG
+  params: {
+    storageAccountName : storageAccount.outputs.storageAccountName
   }
 }
