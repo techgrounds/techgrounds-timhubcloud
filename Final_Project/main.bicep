@@ -7,6 +7,9 @@
 // az deployment sub create --location westus3 --template-file main.bicep
 // az keyvault purge --name keyVault-vxnackc5ttjdq
 
+// Temp admin: projectuser
+// Temp passs: jhas984dalkD#8
+
 targetScope = 'subscription'
 
 @description('The Azure region into which the resources should be deployed.')
@@ -76,5 +79,17 @@ module blob 'modules/blob.bicep' = {
   scope: newRG
   params: {
     storageAccountName : storageAccount.outputs.storageAccountName
+  }
+}
+
+module vmwebserver 'modules/vm-webserver.bicep' = {
+  name: 'vmwebserver'
+  scope: newRG
+  params: {
+    location : location
+    subnetId : newNetworks.outputs.subnet1
+    adminUsername : loginName
+    adminPasswordOrKey: loginPassword
+    
   }
 }

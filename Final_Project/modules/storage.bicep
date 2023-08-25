@@ -7,12 +7,6 @@ param keyVaultName string
 @description('Name of the key in the Key Vault')
 param keyVaultKeyName string = 'cmkey'
 
-//@description('Name for the blob service to host the container for post deployment scripts')
-//param blobServicesName string = 'blobService'
-
-//@description('Name for blob container that holds post deployment scripts')
-//param blobContainerName string = 'scriptstorage'
-
 // CHANGE BACK TO THIS AFTER TESTING (This is to avoid The key 'cmkey' already exists, but the specified key creation parameters did not match that of the existing key errors)
 //@description('Expiration time of the key')
 //param keyExpiration int = dateTimeToEpoch(dateTimeAdd(utcNow(), 'P1Y'))
@@ -79,8 +73,5 @@ resource storage 'Microsoft.Storage/storageAccounts@2023-01-01' = {
     }
   }
 }
-
-// Create blob storage for scripts and set to private
-
 
 output storageAccountName string = storage.name

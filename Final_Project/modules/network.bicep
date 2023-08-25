@@ -80,7 +80,7 @@ resource nsgVnet2 'Microsoft.Network/networkSecurityGroups@2023-04-01' = {
 }
 
 // First virtual network for the webserver
-resource virtualNetwork1 'Microsoft.Network/virtualNetworks@2021-08-01' = {
+resource virtualNetwork1 'Microsoft.Network/virtualNetworks@2023-04-01' = {
   name: 'vnet1'
   location: location
   properties:{
@@ -89,22 +89,23 @@ resource virtualNetwork1 'Microsoft.Network/virtualNetworks@2021-08-01' = {
         vnetIps[0]
       ]
     }
-    subnets: [
-      {
-        name: 'subnet1'
-        properties: {
-          addressPrefix: vnetIps[0]
-          networkSecurityGroup: {
-            id: nsgVnet1.id
-          }
-        }
-      }
-    ]
+  }
+}
+
+// Create the subnet for network1
+resource subnet1 'Microsoft.Network/virtualNetworks/subnets@2023-04-01' = {
+  parent: virtualNetwork1
+  name: 'subnet1'
+  properties: {
+    addressPrefix: vnetIps[0]
+    networkSecurityGroup: {
+      id: nsgVnet1.id
+    }
   }
 }
 
 // Second virtual network for the management server
-resource virtualNetwork2 'Microsoft.Network/virtualNetworks@2021-08-01' = {
+resource virtualNetwork2 'Microsoft.Network/virtualNetworks@2023-04-01' = {
   name: 'vnet2'
   location: location
   properties:{
@@ -128,7 +129,7 @@ resource virtualNetwork2 'Microsoft.Network/virtualNetworks@2021-08-01' = {
 }
 
 // Peering vnet 1 to vnet 2
-resource peeringVnet1to2 'Microsoft.Network/virtualNetworks/virtualNetworkPeerings@2021-02-01' = {
+resource peeringVnet1to2 'Microsoft.Network/virtualNetworks/virtualNetworkPeerings@2023-04-01' = {
   name: 'vnet1to2'
   parent: virtualNetwork1
   properties: {
@@ -143,7 +144,7 @@ resource peeringVnet1to2 'Microsoft.Network/virtualNetworks/virtualNetworkPeerin
 }
 
 // Peering vnet 2 to vnet 1
-resource peeringVnet2to1 'Microsoft.Network/virtualNetworks/virtualNetworkPeerings@2021-02-01' = {
+resource peeringVnet2to1 'Microsoft.Network/virtualNetworks/virtualNetworkPeerings@2023-04-01' = {
   name: 'vnet2to1'
   parent: virtualNetwork2
   properties: {
@@ -156,3 +157,5 @@ resource peeringVnet2to1 'Microsoft.Network/virtualNetworks/virtualNetworkPeerin
     }
   }
 }
+
+output subnet1 string = subnet1.id
