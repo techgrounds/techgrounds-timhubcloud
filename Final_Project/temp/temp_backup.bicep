@@ -1,22 +1,17 @@
+// az deployment group create --resource-group backuptest --template-file temp_backup.bicep
+
 @description('The Azure region into which the resources should be deployed.')
-param location string
+param location string = 'westus3'
 
 @description('The Vault Name.')
-param vaultName string = 'vault-${uniqueString(resourceGroup().id)}'
-
-//param backupPolicyName string = 'DefaultPolicy'
-
-param vmName string
-param vmId string
+param vaultName string = 'testvault-${uniqueString(resourceGroup().id)}'
 
 param policyName string = 'TestingPolicy'
 
-var backupFabric = 'Azure'
-var protectionContainer = 'iaasvmcontainer;iaasvmcontainerv2;${resourceGroup().name};${vmName}'
-var protectedItem = 'vm;iaasvmcontainerv2;${resourceGroup().name};${vmName}'
 var scheduleRunTimes = [
   '2017-01-26T05:30:00Z'
 ]
+
 
 resource recoveryServicesVault 'Microsoft.RecoveryServices/vaults@2023-04-01' = {
   name: vaultName
@@ -55,13 +50,3 @@ resource backupPolicy 'Microsoft.RecoveryServices/vaults/backupPolicies@2023-04-
     timeZone: 'UTC'
   }
 }
-
-resource vaultName_backupFabric_protectionContainer_protectedItem 'Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems@2021-03-01' = {
-  name: '${vaultName}/${backupFabric}/${protectionContainer}/${protectedItem}'
-  properties: {
-    protectedItemType: 'Microsoft.Compute/virtualMachines'
-    policyId: backupPolicy.id
-    //policyId: '${recoveryServicesVault.id}/backupPolicies/${backupPolicyName}'
-    sourceResourceId: vmId
-  }
-} 
