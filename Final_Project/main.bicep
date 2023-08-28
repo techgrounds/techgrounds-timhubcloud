@@ -93,3 +93,35 @@ module vmwebserver 'modules/vm-webserver.bicep' = {
     
   }
 }
+
+module mngmntserver 'modules/vm-management.bicep' = {
+  name: 'mngmntserver'
+  scope: newRG
+  params: {
+    location : location
+    subnetId : newNetworks.outputs.subnet2
+    adminUsername : loginName
+    adminPassword: loginPassword
+    // nsg1 : newNetworks.outputs.nsg1
+  }
+}
+
+module backup 'modules/backup.bicep' = {
+  name: 'backup'
+  scope: newRG
+  params: {
+    location : location
+    vmName : vmwebserver.outputs.vmName
+    vmId : vmwebserver.outputs.vmId
+  }
+}
+
+// module backup 'temp/backup.bicep' = {
+//   name: 'backup'
+//   scope: newRG
+//   params: {
+//     location : location
+//     //vmName : vmwebserver.outputs.vmName
+//     //vmId : vmwebserver.outputs.vmId
+//   }
+// }

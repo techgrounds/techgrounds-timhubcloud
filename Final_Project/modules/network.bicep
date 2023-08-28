@@ -89,20 +89,31 @@ resource virtualNetwork1 'Microsoft.Network/virtualNetworks@2023-04-01' = {
         vnetIps[0]
       ]
     }
+    subnets: [
+      {
+        name: 'subnet1'
+        properties: {
+          addressPrefix: vnetIps[0]
+          networkSecurityGroup: {
+            id: nsgVnet1.id
+          }
+        }
+      }
+    ]
   }
 }
 
 // Create the subnet for network1
-resource subnet1 'Microsoft.Network/virtualNetworks/subnets@2023-04-01' = {
-  parent: virtualNetwork1
-  name: 'subnet1'
-  properties: {
-    addressPrefix: vnetIps[0]
-    networkSecurityGroup: {
-      id: nsgVnet1.id
-    }
-  }
-}
+// resource subnet1 'Microsoft.Network/virtualNetworks/subnets@2023-04-01' = {
+//   parent: virtualNetwork1
+//   name: 'subnet1'
+//   properties: {
+//     addressPrefix: vnetIps[0]
+//     networkSecurityGroup: {
+//       id: nsgVnet1.id
+//     }
+//   }
+// }
 
 // Second virtual network for the management server
 resource virtualNetwork2 'Microsoft.Network/virtualNetworks@2023-04-01' = {
@@ -116,7 +127,7 @@ resource virtualNetwork2 'Microsoft.Network/virtualNetworks@2023-04-01' = {
     }
     subnets: [
       {
-        name: 'subnet1'
+        name: 'subnet2'
         properties: {
           addressPrefix: vnetIps[1]
           networkSecurityGroup: {
@@ -127,6 +138,18 @@ resource virtualNetwork2 'Microsoft.Network/virtualNetworks@2023-04-01' = {
     ]
   }
 }
+
+// Create the subnet for network2
+// resource subnet2 'Microsoft.Network/virtualNetworks/subnets@2023-04-01' = {
+//   parent: virtualNetwork2
+//   name: 'subnet2'
+//   properties: {
+//     addressPrefix: vnetIps[1]
+//     networkSecurityGroup: {
+//       id: nsgVnet2.id
+//     }
+//   }
+// }
 
 // Peering vnet 1 to vnet 2
 resource peeringVnet1to2 'Microsoft.Network/virtualNetworks/virtualNetworkPeerings@2023-04-01' = {
@@ -158,4 +181,6 @@ resource peeringVnet2to1 'Microsoft.Network/virtualNetworks/virtualNetworkPeerin
   }
 }
 
-output subnet1 string = subnet1.id
+output subnet1 string = virtualNetwork1.properties.subnets[0].id
+output subnet2 string = virtualNetwork2.properties.subnets[0].id
+output nsg1 string = nsgVnet1.name
