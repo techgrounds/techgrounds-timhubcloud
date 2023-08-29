@@ -4,8 +4,6 @@ param vmName string = 'mngmntserver'
 @description('Username for the Virtual Machine.')
 param adminUsername string
 
-// param nsg1 string
-
 @description('Subnet ID from network 2.')
 param subnetId string
 
@@ -21,6 +19,9 @@ param dnsLabelPrefix string = toLower('${vmName}-${uniqueString(resourceGroup().
   'windows-server'
 ])
 param windowsOSVersion string = 'windows-server'
+
+@description('Name of the deployment environment.')
+param environmentName string
 
 @description('The Windows version for the VM. This will pick a fully patched image of this given Windows version.')
 @allowed([
@@ -54,7 +55,7 @@ param OSVersion string = '2022-datacenter-azure-edition'
 param location string = resourceGroup().location
 
 @description('The size of the VM')
-param vmSize string = 'Standard_D2s_v3'
+param vmSize string = environmentName == 'Production' ? 'Standard_D2s_v3' : 'Standard_A1'
 
 var imageReference = {
   'windows-server': {
@@ -67,7 +68,7 @@ var imageReference = {
 
 var publicIPAddressName = '${vmName}PublicIP'
 var networkInterfaceName = '${vmName}NetInt'
-var osDiskType = 'Standard_LRS'
+var osDiskType =  'Standard_LRS'
 
 resource publicIPAddress 'Microsoft.Network/publicIPAddresses@2023-04-01' = {
   name: publicIPAddressName
@@ -84,20 +85,6 @@ resource publicIPAddress 'Microsoft.Network/publicIPAddresses@2023-04-01' = {
     idleTimeoutInMinutes: 4
   }
 }
-
-// resource nsgRule4000 'Microsoft.Network/networkSecurityGroups/securityRules@2023-04-01' = {
-//   name: '${nsg1}/sshMngmtIp'
-//   properties: {
-//     protocol: 'Tcp'
-//     sourcePortRange: '*'
-//     destinationPortRange: '22'
-//     sourceAddressPrefix: publicIPAddress.properties.ipAddress
-//     destinationAddressPrefix: '*'
-//     access: 'Allow'
-//     priority: 111
-//     direction: 'Inbound'
-//   }
-// }
 
 resource networkInterface 'Microsoft.Network/networkInterfaces@2023-04-01' = {
   name: networkInterfaceName
@@ -147,6 +134,9 @@ resource vm 'Microsoft.Compute/virtualMachines@2023-03-01' = {
       computerName: vmName
       adminUsername: adminUsername
       adminPassword: adminPassword
+    }
+    securityProfile:{
+      encryptionAtHost: true
     }
   }
 }

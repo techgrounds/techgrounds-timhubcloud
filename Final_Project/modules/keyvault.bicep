@@ -1,5 +1,5 @@
 @description('Specifies the name of the key vault.')
-param keyVaultName string = 'keyVault2-${uniqueString(resourceGroup().id)}'
+param keyVaultName string = 'vaultNew-${uniqueString(resourceGroup().id)}'
 
 @description('Specifies the managed identity.')
 param managedIdentityName string

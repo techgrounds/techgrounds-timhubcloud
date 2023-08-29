@@ -32,8 +32,11 @@ param ubuntuOSVersion string = 'Ubuntu-2204'
 @description('Location for all resources.')
 param location string = resourceGroup().location
 
+@description('Name of the deployment environment.')
+param environmentName string
+
 @description('The size of the VM')
-param vmSize string = 'Standard_D2s_v3'
+param vmSize string = environmentName == 'Production' ? 'Standard_D2s_v3' : 'Standard_A1'
 
 var imageReference = {
   'Ubuntu-1804': {
@@ -70,8 +73,6 @@ var linuxConfiguration = {
     ]
   }
 }
-
-
 
 resource publicIPAddress 'Microsoft.Network/publicIPAddresses@2023-04-01' = {
   name: publicIPAddressName
@@ -139,6 +140,9 @@ resource vm 'Microsoft.Compute/virtualMachines@2023-03-01' = {
       adminPassword: adminPasswordOrKey
       customData: loadFileAsBase64('customdata.sh')
       linuxConfiguration: ((authenticationType == 'password') ? null : linuxConfiguration)
+    }
+    securityProfile: {
+      encryptionAtHost: true
     }
   }
 }

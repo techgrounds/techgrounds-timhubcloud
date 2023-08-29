@@ -103,18 +103,6 @@ resource virtualNetwork1 'Microsoft.Network/virtualNetworks@2023-04-01' = {
   }
 }
 
-// Create the subnet for network1
-// resource subnet1 'Microsoft.Network/virtualNetworks/subnets@2023-04-01' = {
-//   parent: virtualNetwork1
-//   name: 'subnet1'
-//   properties: {
-//     addressPrefix: vnetIps[0]
-//     networkSecurityGroup: {
-//       id: nsgVnet1.id
-//     }
-//   }
-// }
-
 // Second virtual network for the management server
 resource virtualNetwork2 'Microsoft.Network/virtualNetworks@2023-04-01' = {
   name: 'vnet2'
@@ -138,18 +126,6 @@ resource virtualNetwork2 'Microsoft.Network/virtualNetworks@2023-04-01' = {
     ]
   }
 }
-
-// Create the subnet for network2
-// resource subnet2 'Microsoft.Network/virtualNetworks/subnets@2023-04-01' = {
-//   parent: virtualNetwork2
-//   name: 'subnet2'
-//   properties: {
-//     addressPrefix: vnetIps[1]
-//     networkSecurityGroup: {
-//       id: nsgVnet2.id
-//     }
-//   }
-// }
 
 // Peering vnet 1 to vnet 2
 resource peeringVnet1to2 'Microsoft.Network/virtualNetworks/virtualNetworkPeerings@2023-04-01' = {

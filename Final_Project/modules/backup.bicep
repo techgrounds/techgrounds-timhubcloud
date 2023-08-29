@@ -1,15 +1,17 @@
 @description('The Azure region into which the resources should be deployed.')
 param location string
 
-@description('The Vault Name.')
+@description('Name of the vault.')
 param vaultName string = 'vault-${uniqueString(resourceGroup().id)}'
 
-//param backupPolicyName string = 'DefaultPolicy'
-
+@description('Name of the Virtual Machine')
 param vmName string
+
+@description('ID of the Virtual Machine')
 param vmId string
 
-param policyName string = 'TestingPolicy'
+@description('Name of the backup policy')
+param policyName string = 'WebserverPolicy'
 
 var backupFabric = 'Azure'
 var protectionContainer = 'iaasvmcontainer;iaasvmcontainerv2;${resourceGroup().name};${vmName}'

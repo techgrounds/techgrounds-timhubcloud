@@ -1,12 +1,14 @@
 
-// ----- MAIN -----
-
+// =============================================================
+//                     CLOUD PROJECT V1.0
+// =============================================================
+//
 // Temporary commands:
-
+//
 // az deployment sub what-if --location westus3 --template-file main.bicep
 // az deployment sub create --location westus3 --template-file main.bicep
 // az keyvault purge --name keyVault-vxnackc5ttjdq
-
+//
 // Temp admin: projectuser
 // Temp passs: jhas984dalkD#8
 
@@ -18,23 +20,30 @@ param location string = 'westus3'
 @description('The name of the resource group.')
 param resourceGroupName string = 'groupmain'
 
+@description('A configuration for this deployment.')
+@allowed([
+  'Development'
+  'Production'
+])
+param environmentName string = 'Production'
+
 @description('The name of the managed identity.')
 param managedIdentityName string = 'keyVaultIdentity'
 
-@description('The IP adresses for the vnet resources that should be deployed.')
+@description('The IP adresses for the virtual network resources that should be deployed.')
 param vnetIps array = [
   '10.10.10.0/24'
   '10.20.20.0/24'
 ]
 
-@description('Trusted IP addresses for access to the management server. Seperated by a comma.')
+@description('Trusted IP address for access to the management server via RDP.')
 param trustedIpAddresses string = '10.10.10.0'
 
-@description('The login name for the server.')
+@description('The login name for the servers.')
 @secure()
 param loginName string
 
-@description('The password for the server.')
+@description('The password for the servers.')
 @secure()
 param loginPassword string
 
@@ -43,6 +52,10 @@ resource newRG 'Microsoft.Resources/resourceGroups@2022-09-01' = {
   location: location
 }
 
+// ====== Resources created in this module =====================
+// Virtual Networks, Subnets, Network Security Groups,
+// Network Peering
+// =============================================================
 module newNetworks 'modules/network.bicep' = {
   name: 'newVnets'
   scope: newRG
@@ -53,6 +66,9 @@ module newNetworks 'modules/network.bicep' = {
   }
 }
 
+// ====== Resources created in this module =====================
+// KeyVault, Managed Identity, Secret
+// =============================================================
 module keyVault 'modules/keyvault.bicep' = {
   name: 'keyVault'
   scope: newRG
@@ -64,6 +80,9 @@ module keyVault 'modules/keyvault.bicep' = {
   }
 }
 
+// ====== Resources created in this module =====================
+// Storage Account, Encryption Key
+// =============================================================
 module storageAccount 'modules/storage.bicep' = {
   name: 'storageAccount'
   scope: newRG
@@ -74,6 +93,9 @@ module storageAccount 'modules/storage.bicep' = {
   }
 }
 
+// ====== Resources created in this module =====================
+// Blob Container
+// =============================================================
 module blob 'modules/blob.bicep' = {
   name: 'blob'
   scope: newRG
@@ -82,6 +104,9 @@ module blob 'modules/blob.bicep' = {
   }
 }
 
+// ====== Resources created in this module =====================
+// Public IP Address, Network Interface, Virtual Machine
+// =============================================================
 module vmwebserver 'modules/vm-webserver.bicep' = {
   name: 'vmwebserver'
   scope: newRG
@@ -90,10 +115,13 @@ module vmwebserver 'modules/vm-webserver.bicep' = {
     subnetId : newNetworks.outputs.subnet1
     adminUsername : loginName
     adminPasswordOrKey: loginPassword
-    
+    environmentName: environmentName
   }
 }
 
+// ====== Resources created in this module =====================
+// Public IP Address, Network Interface, Virtual Machine
+// =============================================================
 module mngmntserver 'modules/vm-management.bicep' = {
   name: 'mngmntserver'
   scope: newRG
@@ -102,10 +130,13 @@ module mngmntserver 'modules/vm-management.bicep' = {
     subnetId : newNetworks.outputs.subnet2
     adminUsername : loginName
     adminPassword: loginPassword
-    // nsg1 : newNetworks.outputs.nsg1
+    environmentName: environmentName
   }
 }
 
+// ====== Resources created in this module =====================
+// Recovery Services Vault, Backup Policy, Protected Container
+// =============================================================
 module backup 'modules/backup.bicep' = {
   name: 'backup'
   scope: newRG
@@ -115,13 +146,3 @@ module backup 'modules/backup.bicep' = {
     vmId : vmwebserver.outputs.vmId
   }
 }
-
-// module backup 'temp/backup.bicep' = {
-//   name: 'backup'
-//   scope: newRG
-//   params: {
-//     location : location
-//     //vmName : vmwebserver.outputs.vmName
-//     //vmId : vmwebserver.outputs.vmId
-//   }
-// }

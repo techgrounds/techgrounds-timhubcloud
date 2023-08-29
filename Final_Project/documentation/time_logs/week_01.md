@@ -2,7 +2,7 @@
 
 
 ## Daily report
-Read through the assignment and setup all files and tools needed for the project (Jira, .md for doccumentation, Visual Studio Code, Azure CLI)
+Read through the assignment and setup all files and tools needed for the project (Jira, .md for documentation, Visual Studio Code, Azure CLI)
 
 ## Obstacles
 No obstacles.
@@ -40,7 +40,7 @@ How to analyze a product owners' requirement and formulate questions; how to dep
 # Log August 23, 2023
 
 ## Daily report
-Had our meeting with the product owner. A lot of questions were answered. Started lining out a deployment plan.
+Had our meeting with the product owner. A lot of questions were answered. Started lining out the architecture and a deployment plan. I also continued with the Microsoft learn modules for bicep; finished the bicep fundamentals section.
 
 ## Obstacles
 No obstacles.
@@ -49,7 +49,7 @@ No obstacles.
 No solutions needed.
 
 ## Learnings
-As more in depth questions to get a good grasp of the required infrastructure.
+It's important to ask the product owner more in depth questions to get a good grasp of the required infrastructure.
 
 ---
 
@@ -65,19 +65,20 @@ Had to deal with a lot of error fixing. One of the biggest was the creation of a
 Made the expiration date static for the moment. Will fix in a future version.
 
 ## Learnings
-How to deal with errors and how to use what-if to test deployments without deloying.
+How to deal with errors and how to use what-if to test deployments without deploying.
 
 ---
 
 # Log August 25, 2023
 
 ## Daily report
-Created a blob storage module for the post-deployment scripts.
+Created a blob storage module for the post-deployment scripts. Added a first version of the webserver.
 
 ## Obstacles
-
+Encountered problems automatically deploying the Apache server on the VM. Deployment was successful and no error messages popped up.
 
 ## Solutions
-
+After a long time troubleshooting I found out the error was in the custom data bash script which for some reason had spaces in front of the commands and therefor failed to execute properly on deployment. Easy fix.
 
 ## Learnings
+Check your code! Small mistakes like accidental spaces can mess everything up.

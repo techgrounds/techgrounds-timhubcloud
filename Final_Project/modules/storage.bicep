@@ -1,7 +1,10 @@
 @description('The location into which the resources should be deployed.')
 param location string = resourceGroup().location
 
+@description('Managed Identity for the Storage Account.')
 param managedIdentityName string
+
+@description('Name of the Key Vault.')
 param keyVaultName string
 
 @description('Name of the key in the Key Vault')
