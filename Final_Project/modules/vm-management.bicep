@@ -57,6 +57,14 @@ param location string = resourceGroup().location
 @description('The size of the VM')
 param vmSize string = environmentName == 'Production' ? 'Standard_D2s_v3' : 'Standard_A1'
 
+@description('Select IP address sku based on environment.')
+param publicIpSku string = environmentName == 'Production' ? 'Standard' : 'Basic'
+
+@description('Availability zone allocation.')
+var availabilityZones = environmentName == 'Development' ? null : [
+  '1'
+]
+
 var imageReference = {
   'windows-server': {
     publisher: 'MicrosoftWindowsServer'
@@ -73,11 +81,12 @@ var osDiskType =  'Standard_LRS'
 resource publicIPAddress 'Microsoft.Network/publicIPAddresses@2023-04-01' = {
   name: publicIPAddressName
   location: location
+  zones: availabilityZones
   sku: {
-    name: 'Basic'
+    name: publicIpSku
   }
   properties: {
-    publicIPAllocationMethod: 'Dynamic'
+    publicIPAllocationMethod: 'Static'
     publicIPAddressVersion: 'IPv4'
     dnsSettings: {
       domainNameLabel: dnsLabelPrefix
@@ -110,6 +119,7 @@ resource networkInterface 'Microsoft.Network/networkInterfaces@2023-04-01' = {
 resource vm 'Microsoft.Compute/virtualMachines@2023-03-01' = {
   name: vmName
   location: location
+  zones: availabilityZones
   properties: {
     hardwareProfile: {
       vmSize: vmSize
