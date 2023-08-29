@@ -1,4 +1,4 @@
-##Product Owner - Briefing
+## Product Owner - Briefing
 Date: 23/08/2023 - 14:00
 Topic: PRO-01 CLOUD
 Team: Code-Snakes
@@ -7,7 +7,7 @@ Team: Code-Snakes
 Tim de Pagter
 Shamim Khaliq	
 
-###General:
+### General:
 Q: What regions allowed for deployment?
 A: VNET peering connections. 1 regions, multiple availability zones
 
@@ -18,7 +18,7 @@ Q: Could the product owner elaborate on the specific goals and benefits the comp
 A: 
 
 
-###Network:
+### Network:
 Q: Only 1 NSG per Virtual Network? or do you want to add extra NSG in the future?
 A: 1 nsg, + rules
 
@@ -40,7 +40,7 @@ A: We are free to implement as we like.  2 VNET
 
 
 
-###Webserver:
+### Webserver:
 Q: Preferred distribution?
 A: SSH/RDP dependant
 
@@ -76,7 +76,7 @@ Q: What is the required uptime for the webserver
 A: 
 
 
-###RBAC:
+### RBAC:
 Q: What roles are there in the organization?
 A: 1 role Admin. -> access (other servers) via Management Server
 
