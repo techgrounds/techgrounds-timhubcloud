@@ -6,6 +6,8 @@ Deliver a point by point description of the product requirements.
 
 ### Deliverable: 
 
+##### Upfront Requirements
+
 1. All VM disks must be encrypted.
 2. The webserver requires daily backups. These backups must be kept for at 7 days.
 3. The webserver must be installed in an automated way.
@@ -20,3 +22,10 @@ Deliver a point by point description of the product requirements.
 Diagram:
 
 ![diagram](diagram.png)
+
+##### Additional requirements after product owner meeting
+
+1. One region.
+2. Basic/cheapest storage for postscript storage.
+3. NSG sufficient for firewall.
+4. Azure managed keys for disk encryption.
