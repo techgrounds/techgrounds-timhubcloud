@@ -8,7 +8,7 @@
 // az deployment sub what-if --location westus3 --template-file main.bicep
 // az deployment sub create --location westus3 --template-file main.bicep
 // az keyvault purge --name keyVault-vxnackc5ttjdq
-//
+// --parameters trustedIpAddresses=<IP Address>
 // Temp admin: projectuser
 // Temp passs: jhas984dalkD#8
 

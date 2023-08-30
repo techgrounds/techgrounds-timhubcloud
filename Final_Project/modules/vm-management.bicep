@@ -55,7 +55,7 @@ param OSVersion string = '2022-datacenter-azure-edition'
 param location string = resourceGroup().location
 
 @description('The size of the VM')
-param vmSize string = environmentName == 'Production' ? 'Standard_D2s_v3' : 'Standard_A1'
+param vmSize string = environmentName == 'Production' ? 'Standard_B1s' : 'Standard_B1s'
 
 @description('Select IP address sku based on environment.')
 param publicIpSku string = environmentName == 'Production' ? 'Standard' : 'Basic'

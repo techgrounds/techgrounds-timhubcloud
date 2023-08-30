@@ -20,10 +20,25 @@ If you are hard stuck on a bug, attempt to track down the error as much as possi
 Did another deployment test just to make sure everything works as it should. After that I started working on all the documentation, logs and diagrams. Added availability zone allocation for servers.
 
 ## Obstacles
+No obstacles.
+
+## Solutions
+No solutions needed.
+
+## Learnings
+Availability zone allocation, documentation.
+
+---
+
+# Log August 29, 2023
+
+## Daily report
+Made some final tweaks to the code and documentation.
+
+## Obstacles
 
 
 ## Solutions
 
 
 ## Learnings
-
