@@ -29,7 +29,7 @@ var nicName = '${vmScaleSetName}nic'
 var ipConfigName = '${vmScaleSetName}ipconfig'
 var appGwPublicIPAddressName = '${vmScaleSetName}appGwPip'
 var appGwName = '${vmScaleSetName}appGw'
-var appGwFrontendPort = 80
+var appGwFrontendPort = 443
 var appGwBackendPort = 80
 var appGwBePoolName = '${vmScaleSetName}appGwBepool'
 var imageReference = {
@@ -100,6 +100,12 @@ resource appGw 'Microsoft.Network/applicationGateways@2022-11-01' = {
           port: appGwFrontendPort
         }
       }
+      {// =========== NEW
+        name: 'redirPort'
+        properties: {
+          port: 80
+        }
+      }
     ]
     backendAddressPools: [
       {
@@ -116,6 +122,15 @@ resource appGw 'Microsoft.Network/applicationGateways@2022-11-01' = {
         }
       }
     ]
+    sslCertificates: [
+      {
+        name: 'sshCertificate'
+        properties: {
+          data: loadFileAsBase64('appgwcert.pfx')
+          password: 'test'
+        }
+      }
+    ]
     httpListeners: [
       {
         name: 'appGwHttpListener'
@@ -125,6 +140,21 @@ resource appGw 'Microsoft.Network/applicationGateways@2022-11-01' = {
           }
           frontendPort: {
             id: resourceId('Microsoft.Network/applicationGateways/frontendPorts', appGwName, 'appGwFrontendPort')
+          }
+          protocol: 'Https'
+          sslCertificate: {
+            id: resourceId('Microsoft.Network/applicationGateways/sslCertificates', appGwName, 'sshCertificate')
+          }
+        }
+      }
+      {// ================================== NEW
+        name: 'redirHttpToHttpsListener'
+        properties: {
+          frontendIPConfiguration: {
+            id: resourceId('Microsoft.Network/applicationGateways/frontendIPConfigurations', appGwName, 'appGwFrontendIP')
+          }
+          frontendPort: {
+            id: resourceId('Microsoft.Network/applicationGateways/frontendPorts', appGwName, 'redirPort')
           }
           protocol: 'Http'
         }
@@ -144,6 +174,32 @@ resource appGw 'Microsoft.Network/applicationGateways@2022-11-01' = {
           }
           backendHttpSettings: {
             id: resourceId('Microsoft.Network/applicationGateways/backendHttpSettingsCollection/', appGwName, 'appGwBackendHttpSettings')
+          }
+        }
+      }
+      {// ====================== NEW
+        name: 'rule2'
+        properties: {
+          ruleType: 'Basic'
+          priority: 110
+          httpListener: {
+            id: resourceId('Microsoft.Network/applicationGateways/httpListeners', appGwName, 'redirHttpToHttpsListener')
+          }
+          redirectConfiguration: {
+            id: resourceId('Microsoft.Network/applicationGateways/redirectConfigurations', appGwName, 'redirConfigHttpToHttps')
+          }
+        }
+      }
+    ]
+    redirectConfigurations: [// ====================== NEW
+      {
+        name: 'redirConfigHttpToHttps'
+        properties:{
+          redirectType: 'Permanent'
+          includePath: true
+          includeQueryString: true
+          targetListener: {
+            id: resourceId('Microsoft.Network/applicationGateways/httpListeners', appGwName, 'appGwHttpListener')
           }
         }
       }
