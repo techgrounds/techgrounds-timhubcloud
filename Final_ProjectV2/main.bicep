@@ -20,15 +20,15 @@ param location string = 'westus3'
 @description('The name of the resource group.')
 param resourceGroupName string = 'groupmain'
 
-// @description('A configuration for this deployment.')
-// @allowed([
-//   'Development'
-//   'Production'
-// ])
-// param environmentName string = 'Production'
+@description('A configuration for this deployment.')
+@allowed([
+  'Development'
+  'Production'
+])
+param environmentName string = 'Production'
 
-// @description('The name of the managed identity.')
-// param managedIdentityName string = 'keyVaultIdentity'
+@description('The name of the managed identity.')
+param managedIdentityName string = 'keyVaultIdentity'
 
 @description('The IP adresses for the virtual network resources that should be deployed.')
 param vnetIps array = [
@@ -89,40 +89,40 @@ module webserverVmss 'modules/scaleset.bicep' = {
 // ====== Resources created in this module =====================
 // KeyVault, Managed Identity, Secret
 // =============================================================
-// module keyVault 'modules/keyvault.bicep' = {
-//   name: 'keyVault'
-//   scope: newRG
-//   params: {
-//     location: location
-//     managedIdentityName : managedIdentityName
-//     loginName : loginName
-//     loginPassword : loginPassword
-//   }
-// }
+module keyVault 'modules/keyvault.bicep' = {
+  name: 'keyVault'
+  scope: newRG
+  params: {
+    location: location
+    managedIdentityName : managedIdentityName
+    loginName : loginName
+    loginPassword : loginPassword
+  }
+}
 
 // ====== Resources created in this module =====================
 // Storage Account, Encryption Key
 // =============================================================
-// module storageAccount 'modules/storage.bicep' = {
-//   name: 'storageAccount'
-//   scope: newRG
-//   params: {
-//     location: location
-//     managedIdentityName : managedIdentityName
-//     keyVaultName : keyVault.outputs.keyVaultName
-//   }
-// }
+module storageAccount 'modules/storage.bicep' = {
+  name: 'storageAccount'
+  scope: newRG
+  params: {
+    location: location
+    managedIdentityName : managedIdentityName
+    keyVaultName : keyVault.outputs.keyVaultName
+  }
+}
 
 // ====== Resources created in this module =====================
 // Blob Container
 // =============================================================
-// module blob 'modules/blob.bicep' = {
-//   name: 'blob'
-//   scope: newRG
-//   params: {
-//     storageAccountName : storageAccount.outputs.storageAccountName
-//   }
-// }
+module blob 'modules/blob.bicep' = {
+  name: 'blob'
+  scope: newRG
+  params: {
+    storageAccountName : storageAccount.outputs.storageAccountName
+  }
+}
 
 // ====== Resources created in this module =====================
 // Public IP Address, Network Interface, Virtual Machine
@@ -142,17 +142,17 @@ module webserverVmss 'modules/scaleset.bicep' = {
 // ====== Resources created in this module =====================
 // Public IP Address, Network Interface, Virtual Machine
 // =============================================================
-// module mngmntserver 'modules/vm-management.bicep' = {
-//   name: 'mngmntserver'
-//   scope: newRG
-//   params: {
-//     location : location
-//     subnetId : newNetworks.outputs.subnet2
-//     adminUsername : loginName
-//     adminPassword: loginPassword
-//     environmentName: environmentName
-//   }
-// }
+module mngmntserver 'modules/vm-management.bicep' = {
+  name: 'mngmntserver'
+  scope: newRG
+  params: {
+    location : location
+    subnetId : newNetworks.outputs.subnet2
+    adminUsername : loginName
+    adminPassword: loginPassword
+    environmentName: environmentName
+  }
+}
 
 // ====== Resources created in this module =====================
 // Recovery Services Vault, Backup Policy, Protected Container

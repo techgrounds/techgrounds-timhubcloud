@@ -273,8 +273,8 @@ resource vmScaleSet 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
               type: 'ApplicationHealthLinux'
               typeHandlerVersion: '1.0'
               settings: {
-                protocol: 'https'
-                port: 443
+                protocol: 'http'
+                port: 80
               }
             }
           }

@@ -35,7 +35,20 @@ resource nsgVnet1 'Microsoft.Network/networkSecurityGroups@2023-04-01' = {
           sourceAddressPrefix: '*'
           destinationAddressPrefix: '*'
           access: 'Allow'
-          priority: 101
+          priority: 110
+          direction: 'Inbound'
+        }
+      }
+      {
+        name: 'httpsForWebserver'// ADDED FOR APP GATEWAY CHANGE
+        properties: {
+          protocol: 'Tcp'
+          sourcePortRange: '*'
+          destinationPortRange: '443'
+          sourceAddressPrefix: '*'
+          destinationAddressPrefix: '*'
+          access: 'Allow'
+          priority: 120
           direction: 'Inbound'
         }
       }
@@ -100,6 +113,9 @@ resource virtualNetwork1 'Microsoft.Network/virtualNetworks@2023-04-01' = {
         name: 'subnet1_2'
         properties: {
           addressPrefix: '10.10.10.128/26'
+          networkSecurityGroup: {// ADDED WITH APP GATEWAY CHANGE
+            id: nsgVnet1.id
+          }
         }
       }
     ]
