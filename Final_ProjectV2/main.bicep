@@ -81,7 +81,7 @@ module webserverVmss 'modules/scaleset.bicep' = {
     appGwSubnetName: newNetworks.outputs.subnet1_name
     adminPassword: loginPassword
     adminUsername: loginName
-    instanceCount: 2
+    instanceCount: 1
     vmssName: 'webserverVmss'
   }
 }

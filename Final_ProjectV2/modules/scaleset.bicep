@@ -5,7 +5,7 @@ param vmSku string = 'Standard_B1s'
 param vmssName string
 
 @description('Number of VM instances (1000 or less).')
-@minValue(2)
+@minValue(1)
 @maxValue(1000)
 param instanceCount int
 
@@ -264,4 +264,62 @@ resource vmScaleSet 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
   dependsOn: [
     appGw
   ]
+}
+
+resource autoscaleHost 'Microsoft.Insights/autoscalesettings@2022-10-01' = {
+  name: 'autoscaleHost'
+  location: location
+  properties: {
+    name: 'autoscaleHost'
+    targetResourceUri: vmScaleSet.id
+    enabled: true
+    profiles: [
+      {
+        name: 'Profile1'
+        capacity: {
+          minimum: '1'
+          maximum: '3'
+          default: '1'
+        }
+        rules: [
+          {
+            metricTrigger: {
+              metricName: 'Percentage CPU'
+              metricResourceUri: vmScaleSet.id
+              timeGrain: 'PT1M'
+              statistic: 'Average'
+              timeWindow: 'PT5M'
+              timeAggregation: 'Average'
+              operator: 'GreaterThan'
+              threshold: 70
+            }
+            scaleAction: {
+              direction: 'Increase'
+              type: 'ChangeCount'
+              value: '1'
+              cooldown: 'PT1M'
+            }
+          }
+          {
+            metricTrigger: {
+              metricName: 'Percentage CPU'
+              metricResourceUri: vmScaleSet.id
+              timeGrain: 'PT1M'
+              statistic: 'Average'
+              timeWindow: 'PT5M'
+              timeAggregation: 'Average'
+              operator: 'LessThan'
+              threshold: 30
+            }
+            scaleAction: {
+              direction: 'Decrease'
+              type: 'ChangeCount'
+              value: '1'
+              cooldown: 'PT1M'
+            }
+          }
+        ]
+      }
+    ]
+  }
 }
