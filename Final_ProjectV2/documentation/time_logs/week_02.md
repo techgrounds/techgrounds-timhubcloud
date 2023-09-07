@@ -30,15 +30,48 @@ Availability zone allocation, documentation.
 
 ---
 
-# Log August 29, 2023
+# Log August 30, 2023
 
 ## Daily report
-Made some final tweaks to the code and documentation.
+Made some final tweaks to the code and documentation. Worked some more on python skills.
 
 ## Obstacles
-
+No obstacles.
 
 ## Solutions
-
+No solutions needed.
 
 ## Learnings
+Python programming
+
+---
+
+# Log August 31, 2023
+
+## Daily report
+Created the presentation for fridaya and worked some more on python skills.
+
+## Obstacles
+No obstacles.
+
+## Solutions
+No solutions needed.
+
+## Learnings
+Presenting, Python programming.
+
+---
+
+# Log September 1, 2023
+
+## Daily report
+Did the presentation, product owner was pleased. Found out a few things I could improve respect to the NSGs which I implemented. Afterwards continued with python course.
+
+## Obstacles
+No obstacles.
+
+## Solutions
+No solutions needed.
+
+## Learnings
+Fixes for the mvp, Python programming.
