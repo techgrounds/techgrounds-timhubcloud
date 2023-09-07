@@ -221,6 +221,10 @@ resource vmScaleSet 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
     upgradePolicy: {
       mode: 'Automatic'
     }
+    automaticRepairsPolicy: {// ADDED REPAIR
+      enabled: true
+      gracePeriod: 'PT30M'
+    }
     virtualMachineProfile: {
       storageProfile: {
         osDisk: {
@@ -255,6 +259,23 @@ resource vmScaleSet 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
                   }
                 }
               ]
+            }
+          }
+        ]
+      }
+      extensionProfile: {// HEALTH CHECK
+        extensions: [
+          {
+            name: 'HealthExtension'
+            properties: {
+              autoUpgradeMinorVersion: true
+              publisher: 'Microsoft.ManagedServices'
+              type: 'ApplicationHealthLinux'
+              typeHandlerVersion: '1.0'
+              settings: {
+                protocol: 'https'
+                port: 443
+              }
             }
           }
         ]
