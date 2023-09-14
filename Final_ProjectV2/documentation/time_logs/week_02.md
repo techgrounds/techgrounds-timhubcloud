@@ -49,7 +49,7 @@ Python programming
 # Log August 31, 2023
 
 ## Daily report
-Created the presentation for fridaya and worked some more on python skills.
+Created the presentation for friday and worked some more on python skills.
 
 ## Obstacles
 No obstacles.
