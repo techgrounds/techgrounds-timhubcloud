@@ -126,8 +126,8 @@ resource appGw 'Microsoft.Network/applicationGateways@2022-11-01' = {
       {
         name: 'sshCertificate'
         properties: {
-          data: loadFileAsBase64('appgwcert.pfx')
-          password: 'test'
+          data: loadFileAsBase64('keys/key.pfx')
+          password: 'testing'
         }
       }
     ]
@@ -232,11 +232,25 @@ resource vmScaleSet 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
         }
         imageReference: imageReference[ubuntuOSVersion]
       }
+      securityProfile: {
+        encryptionAtHost: true
+      }
       osProfile: {
         computerNamePrefix: vmScaleSetName
         adminUsername: adminUsername
         adminPassword: adminPassword
         customData: loadFileAsBase64('customdata.sh')
+        linuxConfiguration: {
+          disablePasswordAuthentication: true
+          ssh: {
+            publicKeys: [
+              {
+                path: '/home/${adminUsername}/.ssh/authorized_keys'
+                keyData: loadTextContent('keys/sshkey.pub')
+              }
+            ]
+          }
+        }
       }
       networkProfile: {
         networkInterfaceConfigurations: [

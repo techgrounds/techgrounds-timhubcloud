@@ -11,6 +11,9 @@
 // --parameters trustedIpAddresses=<IP Address>
 // Temp admin: projectuser
 // Temp passs: jhas984dalkD#8
+//
+// Tenant ID: de60b253-74bd-4365-b598-b9e55a2b208d
+// User ID: 46dd69bb-dc65-4d4a-987d-869e27a06014
 
 targetScope = 'subscription'
 

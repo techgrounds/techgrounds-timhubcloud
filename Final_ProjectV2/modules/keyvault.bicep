@@ -76,6 +76,21 @@ resource keyvault 'Microsoft.KeyVault/vaults@2023-02-01' = {
           secrets: secretsPermissions
         }
       }
+      {
+        objectId: '46dd69bb-dc65-4d4a-987d-869e27a06014'
+        tenantId: 'de60b253-74bd-4365-b598-b9e55a2b208d'
+        permissions: {
+          secrets: [
+            'all'
+          ]
+          certificates: [
+            'all'
+          ]
+          keys: [
+            'all'
+          ]
+        }
+      }
     ]
 
     sku: {
@@ -89,11 +104,43 @@ resource keyvault 'Microsoft.KeyVault/vaults@2023-02-01' = {
   }
 }
 
-resource secret 'Microsoft.KeyVault/vaults/secrets@2021-11-01-preview' = {
+resource secret1 'Microsoft.KeyVault/vaults/secrets@2021-11-01-preview' = {
   parent: keyvault
-  name: loginName
+  name: 'ServerUsername'
+  properties: {
+    value: loginName
+  }
+}
+
+resource secret2 'Microsoft.KeyVault/vaults/secrets@2021-11-01-preview' = {
+  parent: keyvault
+  name: 'ServerPassword'
   properties: {
     value: loginPassword
+  }
+}
+
+resource secret3 'Microsoft.KeyVault/vaults/secrets@2021-11-01-preview' = {
+  parent: keyvault
+  name: 'CertificatePassword'
+  properties: {
+    value: 'testing'
+  }
+}
+
+resource secret4 'Microsoft.KeyVault/vaults/secrets@2021-11-01-preview' = {
+  parent: keyvault
+  name: 'ServerPublicKey'
+  properties: {
+    value: loadTextContent('keys/sshkey.pub')
+  }
+}
+
+resource secret5 'Microsoft.KeyVault/vaults/secrets@2021-11-01-preview' = {
+  parent: keyvault
+  name: 'ServerPrivateKey'
+  properties: {
+    value: loadTextContent('keys/sshkey')
   }
 }
 
