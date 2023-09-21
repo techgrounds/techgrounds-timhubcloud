@@ -1,6 +1,6 @@
 
 // =============================================================
-//                     CLOUD PROJECT V1.1
+//                     CLOUD PROJECT V1.0
 // =============================================================
 //
 // Temporary commands:
@@ -30,8 +30,8 @@ param resourceGroupName string = 'groupmain'
 ])
 param environmentName string = 'Production'
 
-@description('The name of the managed identity.')
-param managedIdentityName string = 'keyVaultIdentity'
+// @description('The name of the managed identity.')
+// param managedIdentityName string = 'keyVaultIdentity'
 
 @description('The IP adresses for the virtual network resources that should be deployed.')
 param vnetIps array = [
@@ -85,58 +85,58 @@ module database 'modules/database.bicep' = {
 // ====== Resources created in this module =====================
 // Scaleset, App Gateway
 // =============================================================
-module webserverVmss 'modules/scaleset.bicep' = {
-  name: 'webserverVmss'
-  scope: newRG
-  params: {
-    location: location
-    virtualNetworkName: 'vnet1'
-    subnetName: newNetworks.outputs.subnet1_2_name
-    appGwSubnetName: newNetworks.outputs.subnet1_name
-    adminPassword: loginPassword
-    adminUsername: loginName
-    instanceCount: 1
-    vmssName: 'webserverVmss'
-  }
-}
+// module webserverVmss 'modules/scaleset.bicep' = {
+//   name: 'webserverVmss'
+//   scope: newRG
+//   params: {
+//     location: location
+//     virtualNetworkName: 'vnet1'
+//     subnetName: newNetworks.outputs.subnet1_2_name
+//     appGwSubnetName: newNetworks.outputs.subnet1_name
+//     adminPassword: loginPassword
+//     adminUsername: loginName
+//     instanceCount: 1
+//     vmssName: 'webserverVmss'
+//   }
+// }
 
 // ====== Resources created in this module =====================
 // KeyVault, Managed Identity, Secret
 // =============================================================
-module keyVault 'modules/keyvault.bicep' = {
-  name: 'keyVault'
-  scope: newRG
-  params: {
-    location: location
-    managedIdentityName : managedIdentityName
-    loginName : loginName
-    loginPassword : loginPassword
-  }
-}
+// module keyVault 'modules/keyvault.bicep' = {
+//   name: 'keyVault'
+//   scope: newRG
+//   params: {
+//     location: location
+//     managedIdentityName : managedIdentityName
+//     loginName : loginName
+//     loginPassword : loginPassword
+//   }
+// }
 
 // ====== Resources created in this module =====================
 // Storage Account, Encryption Key
 // =============================================================
-module storageAccount 'modules/storage.bicep' = {
-  name: 'storageAccount'
-  scope: newRG
-  params: {
-    location: location
-    managedIdentityName : managedIdentityName
-    keyVaultName : keyVault.outputs.keyVaultName
-  }
-}
+// module storageAccount 'modules/storage.bicep' = {
+//   name: 'storageAccount'
+//   scope: newRG
+//   params: {
+//     location: location
+//     managedIdentityName : managedIdentityName
+//     keyVaultName : keyVault.outputs.keyVaultName
+//   }
+// }
 
 // ====== Resources created in this module =====================
 // Blob Container
 // =============================================================
-module blob 'modules/blob.bicep' = {
-  name: 'blob'
-  scope: newRG
-  params: {
-    storageAccountName : storageAccount.outputs.storageAccountName
-  }
-}
+// module blob 'modules/blob.bicep' = {
+//   name: 'blob'
+//   scope: newRG
+//   params: {
+//     storageAccountName : storageAccount.outputs.storageAccountName
+//   }
+// }
 
 // ====== Resources created in this module =====================
 // Public IP Address, Network Interface, Virtual Machine
