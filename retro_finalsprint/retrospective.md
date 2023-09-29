@@ -1,4 +1,5 @@
-​# Retrospective The Code Snakes.
+
+# Retrospective The Code Snakes
 
 ## Our amazing Teacher: Shikha
 
